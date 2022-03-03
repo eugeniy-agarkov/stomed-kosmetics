@@ -1,0 +1,254 @@
+.header {
+  $top-height: 50px;
+
+  position: relative;
+  z-index: 3;
+
+  &__top,
+  &__center,
+  &__bottom {
+    @include media(md) {
+      display: none;
+    }
+  }
+
+  &__top {
+    background-color: $color-blue-light;
+    border-bottom: 1px solid rgba(66, 110, 170, 0.1);
+
+    &-row {
+      $right-width: 230px;
+      $right-width-xl: 200px;
+      $right-width-lg: 180px;
+
+      display: flex;
+
+      &-left,
+      &-right {
+        height: $top-height;
+        display: flex;
+        align-items: center;
+      }
+
+      &-left {
+        width: calc(100% - #{$right-width});
+        @include media(xl) {
+          width: calc(100% - #{$right-width-xl});
+        }
+        @include media(lg) {
+          width: calc(100% - #{$right-width-lg});
+        }
+      }
+
+      &-right {
+        width: $right-width;
+        padding: 0 0 0 30px;
+        @include media(xl) {
+          width: $right-width-xl;
+        }
+        @include media(lg) {
+          width: $right-width-lg;
+        }
+      }
+    }
+
+  }
+
+  &__center {
+    border-bottom: 1px solid rgba(66, 110, 170, 0.1);
+
+    &-row {
+      display: flex;
+
+      &-left {
+        display: flex;
+        align-items: center;
+        padding: 30px 0;
+      }
+
+      &-right {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-left: auto;
+      }
+
+    }
+
+  }
+
+  &__locations {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1180px;
+    @include media(lg) {
+      max-width: 680px;
+    }
+
+    > li {
+      position: relative;
+      padding: 0 0 0 16px;
+      background: url('../images/icons/pin.svg') left center no-repeat;
+      font-size: 14px;
+    }
+
+    > li, a {
+
+    }
+
+    a {
+      span {
+        @include media(lg) {
+          display: none;
+        }
+      }
+    }
+
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    height: $top-height;
+    position: relative;
+
+    [type="text"],
+    [type="search"],
+    [type="submit"]{
+      outline: none;
+      border: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    [type="text"],
+    [type="search"] {
+      font-size: 14px;
+      color: $color-blue;
+      height: $top-height;
+      background: none;
+      width: 100%;
+      @include placeholder {
+        color: $color-blue;
+      }
+    }
+
+    [type="submit"] {
+      $size: 30px;
+
+      height: $size;
+      width: $size;
+      background: transparent url('../images/icons/search.svg') center center no-repeat;
+      cursor: pointer;
+    }
+
+  }
+
+
+
+  &__logo {
+    margin: 0 60px 0 0;
+    @include media(xl) {
+      margin: 0 30px 0 0;
+    }
+    @include media(lg) {
+      margin: 0 20px 0 0;
+    }
+
+    img {
+      @include media(lg) {
+        height: 25px;
+      }
+    }
+  }
+
+  &__submenu {
+    display: flex;
+    font-size: 16px;
+    @include media(xl) {
+      font-size: 14px;
+    }
+
+    > li {
+
+      &:not(:last-child) {
+        padding: 0 35px 0 0;
+        @include media(xl) {
+          padding: 0 15px 0 0;
+        }
+        @include media(lg) {
+          padding: 0 10px 0 0;
+        }
+      }
+
+    }
+  }
+
+  &__contacts {
+    display: flex;
+
+    > li {
+      display: flex;
+      align-items: center;
+    }
+
+    &-cell {
+      background-position: left center;
+      background-repeat: no-repeat;
+      padding: 0 0 0 42px;
+      margin: 0 50px 0 0;
+      @include media(lg) {
+        margin: 0 20px 0 0;
+      }
+
+      &.time {
+        background-image: url('../images/icons/clock.svg');
+      }
+
+      &.phone {
+        background-image: url('../images/icons/phone.svg');
+        padding: 0 0 0 35px;
+      }
+
+      small {
+        display: block;
+        font-size: 12px;
+        line-height: 15px;
+        margin: 0 0 0px 0;
+        opacity: 0.5;
+      }
+
+      span {
+        font-size: 16px;
+        line-height: 19px;
+        color: $color-blue;
+      }
+
+    }
+
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: uppercase;
+    padding: 30px 0;
+    @include media(xl) {
+      font-size: 14px;
+      padding: 15px 0;
+    }
+    @include media(lg) {
+      font-size: 12px;
+    }
+
+    > li {
+
+    }
+
+  }
+
+}

@@ -1,0 +1,56 @@
+.reviews {
+
+  &__list {
+
+    &-item {
+      margin: 0 0 30px 0;
+
+      &-header {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 29px;
+        color: $color-blue;
+        margin: 0 0 30px 0;
+        @include media(lg) {
+          font-size: 16px;
+          margin: 0 0 15px 0;
+        }
+
+        img {
+          margin: 0 14px 0 0;
+          @include media(lg) {
+            height: 20px;
+          }
+        }
+
+      }
+
+      &-content {
+        font-size: 18px;
+        line-height: 29px;
+        color: $color-blue;
+        margin: 0 0 25px 0;
+        @include media(lg) {
+          font-size: 16px;
+        }
+      }
+
+      &-footer {
+        background: url('../images/icons/pencil.svg') left center no-repeat;
+        padding: 0 0 0 35px;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 22px;
+        color: rgba(25, 56, 94, 0.5);
+        @include media(lg) {
+          font-size: 14px;
+        }
+      }
+
+    }
+
+  }
+
+}

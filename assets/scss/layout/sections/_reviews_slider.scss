@@ -1,0 +1,47 @@
+.reviews_slider {
+
+  &__inner {
+    padding: 70px;
+    border-radius: 20px;
+    background-color: #ECF0F7;
+    @include media(xl) {
+      padding: 40px;
+    }
+    @include media(lg) {
+      padding: 30px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 60px 0;
+    @include media(lg) {
+      margin: 0 0 30px 0;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    padding: 10px 0 0 0;
+
+    &-left {
+      display: flex;
+      align-items: center;
+      width: 180px;
+      justify-content: space-between;
+    }
+
+    &-right {
+      margin-left: auto;
+    }
+
+    .swiper {
+      &-pagination {
+        width: auto;
+
+      }
+    }
+
+  }
+
+}

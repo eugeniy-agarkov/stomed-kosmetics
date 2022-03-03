@@ -1,0 +1,187 @@
+.intro_video {
+
+  &__row {
+    $right-width: 580px;
+    $right-width-xl: 480px;
+    $right-width-lg: 400px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    &-left,
+    &-right {
+      display: flex;
+      align-items: center;
+    }
+
+    &-left {
+      width: calc(100% - #{$right-width});
+      @include media(xl) {
+        width: calc(100% - #{$right-width-xl});
+      }
+      @include media(lg) {
+        width: calc(100% - #{$right-width-lg});
+      }
+    }
+
+    &-right {
+      width: $right-width;
+      padding: 0 0 0 60px;
+      @include media(xl) {
+        width: $right-width-xl;
+      }
+      @include media(lg) {
+        width: $right-width-lg;
+        padding: 0 0 0 30px;
+      }
+    }
+
+  }
+
+  &__text {
+
+    h3 {
+      font-weight: 500;
+      margin: 0 0 15px 0;
+    }
+
+    .btn {
+      margin-top: 30px;
+    }
+
+    p {
+      max-width: 390px;
+    }
+  }
+
+  &__video {
+    background: $color-blue-indigo url("../images/intro_video-background.png") center 180% repeat-x;
+    border-radius: 10px;
+    height: 570px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 80px;
+    @include media(xl) {
+      padding: 0 0 0 40px;
+      height: 470px;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background: url("../images/intro_video-woman.png") right bottom no-repeat;
+      @include media(lg) {
+        background-size: 100%;
+      }
+    }
+
+    &::before {
+      $size: 131px;
+
+      content: '';
+      display: block;
+      width: $size;
+      height: $size;
+      background: url("../images/intro_video-play.svg") center center no-repeat;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateY(-50%) translateX(-50%);
+      z-index: 2;
+      @include media(lg) {
+        background-size: 75%;
+      }
+    }
+
+    &-text {
+      position: relative;
+      z-index: 4;
+      max-width: 500px;
+      @include media(lg) {
+        max-width: 400px;
+      }
+
+      &-title {
+        font-weight: 500;
+        font-size: 64px;
+        line-height: 1.1;
+        color: #fff;
+        margin: 0 0 25px 0;
+        @include media(xl) {
+          font-size: 50px;
+        }
+        @include media(lg) {
+          font-size: 42px;
+        }
+      }
+
+      p {
+        max-width: 295px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #C2D6DF;
+        margin: 0;
+        padding: 0;
+      }
+
+    }
+
+  }
+
+  &__author {
+    $photo-width: 90px;
+
+    display: flex;
+    align-items: center;
+    margin: 55px 0 0 0;
+
+    &-photo {
+      width: $photo-width;
+      height: $photo-width;
+      border-radius: 50%;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+
+    }
+
+    &-text {
+      width: calc(100% - #{$photo-width});
+      padding: 0 0 0 25px;
+      display: flex;
+      align-items: center;
+      color: #FFFFFF;
+
+      small {
+        font-size: 14px;
+        line-height: 1.1;
+        display: block;
+        margin: 0 0 9px 0;
+      }
+
+      span {
+        font-weight: 600;
+        font-size: 18px;
+      }
+    }
+  }
+
+
+
+}

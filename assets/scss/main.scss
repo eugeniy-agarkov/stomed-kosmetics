@@ -1,0 +1,51 @@
+@import url('../css/plugins/swiper.min.css');
+//@import url('../css/plugins/select2.min.css');
+/**
+ * Variables
+ */
+@import "base/variables";
+
+/**
+ * Mixins
+ */
+@import "base/mixins";
+@import "base/mixins-media";
+
+/**
+ * Global
+ */
+@import "base/fonts";
+@import "base/normalize";
+@import "layout/bootstrap/bootstrap";
+@import "base/base";
+
+/**
+ * Modules
+ */
+@import "modules/btn";
+@import "modules/form-control";
+@import "modules/swiper";
+
+/**
+ * Layout
+ */
+@import "layout/sections/header";
+@import "layout/sections/header_mobile";
+@import "layout/sections/content";
+@import "layout/sections/footer";
+@import "layout/sections/headpanel";
+@import "layout/sections/advantages";
+@import "layout/sections/categories";
+@import "layout/sections/doctors_last";
+@import "layout/sections/news_last";
+@import "layout/sections/doctors";
+@import "layout/sections/news";
+@import "layout/sections/reviews";
+@import "layout/sections/reviews_slider";
+@import "layout/sections/intro_video";
+@import "layout/sections/contacts";
+
+/**
+ * Pages
+ */
+@import "layout/page/home/index";

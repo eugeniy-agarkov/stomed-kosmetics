@@ -1,0 +1,204 @@
+.footer {
+  position: relative;
+  z-index: 2;
+
+  &__top {
+    padding: 0 0 60px 0;
+    @include media(lg) {
+      padding: 0 0 30px 0;
+    }
+
+    &-row {
+      $left-width: 230px;
+
+      display: flex;
+
+      &-left,
+      &-right {
+
+      }
+
+      &-left {
+        width: $left-width;
+      }
+
+      &-right {
+        width: calc(100% - #{$left-width});
+        padding: 0 0 0 150px;
+        @include media(xl) {
+          padding: 0 0 0 50px;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    border-top: 1px solid rgba(66, 110, 170, 0.1);
+    padding: 40px 0;
+    @include media(lg) {
+      padding: 20px 0;
+    }
+
+    &-row {
+      $left-width: 280px;
+      $left-width-lg: 280px;
+
+      display: flex;
+      align-items: center;
+
+      &-left,
+      &-right {
+        display: flex;
+        align-items: center;
+      }
+
+      &-left {
+        width: $left-width;
+        @include media(lg) {
+          width: $left-width-lg;
+          padding: 0 30px 0 0;
+        }
+
+        small {
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 1.2;
+          color: $color-blue;
+          @include media(lg) {
+            font-size: 13px;
+          }
+        }
+      }
+
+      &-right {
+        width: calc(100% - #{$left-width});
+        @include media(lg) {
+          width: calc(100% - #{$left-width-lg});
+        }
+
+        p {
+          margin: 0;
+          padding: 0;
+          margin-left: auto;
+          max-width: 1050px;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 1.1;
+          color: $color-gray;
+          @include media(lg) {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+
+  }
+
+  &__title {
+    margin: 0 0 20px 0;
+    font-weight: 500;
+    @include media(lg) {
+      white-space: nowrap;
+    }
+  }
+
+  &__socials {
+    $gutter: 10px;
+
+    margin: 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: -#{$gutter};
+    margin-right: -#{$gutter};
+
+    > li {
+      padding: 0 $gutter;
+
+      img, svg {
+        @include media(xl) {
+          height: 20px;
+        }
+      }
+    }
+  }
+
+  &__columns {
+    $gutter: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    position: relative;
+    margin-left: -#{$gutter};
+    margin-right: -#{$gutter};
+
+    > li {
+      padding: 0 $gutter;
+    }
+
+    &-list {
+      margin: 0;
+      font-size: 16px;
+      @include media(lg) {
+        font-size: 14px;
+      }
+
+      > li {
+
+        &:not(:last-child) {
+          margin: 0 0 15px 0;
+          @include media(lg) {
+            margin: 0 0 8px 0;
+          }
+        }
+
+        a {
+          color: $color-blue;
+        }
+      }
+    }
+
+    &-contacts {
+      margin: 0 0 25px 0;
+
+      > li {
+
+        &:not(:last-child) {
+          margin: 0 0 15px 0;
+        }
+
+        small {
+          display: block;
+          font-size: 14px;
+          color: rgba(25, 56, 94, 0.5);
+          line-height: 1.1;
+          margin: 0 0 5px 0;
+          white-space: nowrap;
+        }
+
+        span,
+        a {
+          font-size: 24px;
+          line-height: 1.1;
+          color: $color-blue;
+          font-weight: 500;
+          white-space: nowrap;
+
+          @include media(xl) {
+            font-size: 18px;
+          }
+        }
+
+        a {
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+}

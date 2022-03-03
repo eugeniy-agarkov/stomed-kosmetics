@@ -1,0 +1,60 @@
+.advantages {
+
+  &__head {
+    display: flex;
+    align-items: center;
+    margin: 0 0 80px 0;
+    @include media(xl) {
+      margin: 0 0 40px 0;
+    }
+
+    &-title {
+      max-width: 485px;
+      margin: 0;
+      @include media(lg) {
+
+      }
+    }
+
+    &-excerpt {
+      max-width: 760px;
+      padding: 0;
+      margin: 0 0 0 100px;
+      @include media(lg) {
+        margin: 0 0 0 40px;
+        max-width: 600px;
+      }
+    }
+  }
+
+  &__list {
+
+    &-item {
+      height: 196px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 35px;
+      background-color: $color-gray-light;
+      border: 2px solid $color-blue-light;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 18px;
+      color: $color-blue-indigo;
+      margin: 0 0 20px 0;
+      @include media(xl) {
+        font-size: 16px;
+
+      }
+
+      img {
+        height: 50px;
+      }
+    }
+
+  }
+
+
+
+}

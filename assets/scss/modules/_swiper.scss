@@ -1,0 +1,66 @@
+.swiper {
+
+    &-pagination {
+        position: relative;
+        bottom: auto;
+        font-size: 18px;
+        color: $color-blue;
+        @include media(lg) {
+            font-size: 14px;
+        }
+
+        &-bullet {
+            $size: 6px;
+
+            width: $size;
+            height: $size;
+            background: #C2D6DF;
+            margin: 0 3px;
+            padding: 0;
+            opacity: 1;
+
+            &-active {
+                transform: scale(1.28);
+                background: #4289EE;
+            }
+        }
+    }
+
+    &-button {
+
+        &-prev,
+        &-next {
+            $size: 50px;
+
+            position: static;
+            width: $size;
+            height: $size;
+            background-color: #fff;
+            background-repeat: no-repeat;
+            background-position: center center;
+            border-radius: 50%;
+            top: auto;
+            margin: 0;
+            border: 2px solid transparent;
+
+            &::after {
+                display: none;
+            }
+
+            &:hover {
+                border-color: $color-blue;
+                background-color: transparent;
+            }
+
+        }
+
+        &-prev {
+            background-image: url('../images/icons/arrow-left.svg');
+        }
+
+        &-next {
+            background-image: url('../images/icons/arrow-right.svg');
+        }
+
+    }
+}

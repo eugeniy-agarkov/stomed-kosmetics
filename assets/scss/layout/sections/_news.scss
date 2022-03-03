@@ -12,11 +12,31 @@
       padding: 0 15px;
       width: 25%;
       margin: 0 0 30px 0;
+      @include media(md) {
+        width: 50%;
+      }
+      @include media(md) {
+        margin: 0 0 25px 0;
+      }
     }
 
     &-item {
       display: block;
       margin: 0 0 30px 0;
+      width: 100%;
+
+      a {
+        display: block;
+        width: 100%;
+
+        img {
+          @include media(md) {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
 
       &:hover {
         text-decoration: none;
@@ -31,6 +51,9 @@
       img {
         border-radius: 6px;
         margin: 0 0 15px 0;
+        @include media(md) {
+          margin: 0 0 10px 0;
+        }
       }
 
       &-labels {
@@ -38,6 +61,10 @@
         text-transform: uppercase;
         display: flex;
         flex-wrap: wrap;
+        @include media(md) {
+          margin: 0 0 5px 0;
+          text-transform: none;
+        }
 
         > li {
           font-weight: bold;
@@ -45,6 +72,9 @@
           position: relative;
           padding: 0 0 0 11px;
           color: #2B63E3;
+          @include media(md) {
+            font-size: 10px;
+          }
 
           &:not(:last-child) {
             margin: 0 10px 0 0;
@@ -80,6 +110,10 @@
       &-title {
         line-height: 1.2;
         margin: 0;
+        @include media(md) {
+          font-weight: 600;
+          font-size: 12px;
+        }
       }
     }
 

@@ -8,5 +8,14 @@
     }
   }
 
+  &__footer {
+    display: none;
+    @include media(sm) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 0 0 0;
+    }
+  }
 
 }

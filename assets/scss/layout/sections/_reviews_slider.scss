@@ -1,14 +1,35 @@
 .reviews_slider {
 
   &__inner {
+    $background: #ECF0F7;
+
     padding: 70px;
     border-radius: 20px;
-    background-color: #ECF0F7;
+    background-color: $background;
+    position: relative;
+    z-index: 1;
     @include media(xl) {
       padding: 40px;
     }
     @include media(lg) {
       padding: 30px;
+    }
+    @include media(sm) {
+      padding: 45px 0;
+    }
+
+    &::after {
+      @include media(sm) {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: -1;
+        left: -15px;
+        right: -15px;
+        top: 0;
+        bottom: 0;
+        background-color: $background;
+      }
     }
   }
 
@@ -17,31 +38,74 @@
     @include media(lg) {
       margin: 0 0 30px 0;
     }
+    @include media(sm) {
+      margin: 0 0 10px 0;
+    }
   }
 
   &__controls {
     display: flex;
     align-items: center;
     padding: 10px 0 0 0;
+    @include media(sm) {
+      flex-direction: column;
+      padding: 0;
+    }
 
     &-left {
       display: flex;
       align-items: center;
       width: 180px;
       justify-content: space-between;
+      @include media(sm) {
+        width: 180px;
+        margin: 0 auto;
+      }
     }
 
     &-right {
       margin-left: auto;
+      @include media(sm) {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        padding: 35px 0 0 0;
+      }
+
+      .btn {
+        &:nth-child(2) {
+          display: none;
+        }
+      }
     }
 
     .swiper {
       &-pagination {
         width: auto;
-
       }
     }
 
+  }
+
+  &__archive {
+    display: none;
+    margin: 0 0 24px 0;
+
+    @include media(sm) {
+      display: block;
+    }
+
+    a {
+      font-size: 18px;
+      text-decoration: underline;
+
+      &:hover,
+      &:active,
+      &:focus {
+        text-decoration: none;
+      }
+    }
   }
 
 }

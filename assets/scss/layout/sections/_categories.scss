@@ -6,6 +6,7 @@
       height: 400px;
     }
 
+
   }
 
   .two {
@@ -22,8 +23,19 @@
     }
   }
 
+  .one,
+  .two,
+  .three {
+    @include media(sm) {
+      height: 190px;
+    }
+  }
+
   [class*=col-] {
     margin-bottom: 30px;
+    @include media(sm) {
+      margin-bottom: 20px;
+    }
   }
 
   &__item {
@@ -33,11 +45,17 @@
     display: flex;
     overflow: hidden;
     height: 100%;
+    @include media(sm) {
+
+    }
 
     &.full {
       background-image: url("../images/categories-item-background.png");
       background-position: center bottom;
       background-repeat: repeat-x;
+      @include media(sm) {
+        background-image: none;
+      }
 
       .categories__item {
 
@@ -60,6 +78,9 @@
         @include media(lg) {
           padding: 30px 0 30px 30px;
         }
+        @include media(sm) {
+          padding: 0;
+        }
       }
     }
 
@@ -69,6 +90,10 @@
       right: 0;
       bottom: 0;
       height: auto;
+      @include media(sm) {
+        position: relative;
+        margin-left: auto;
+      }
     }
 
     &-text {
@@ -82,6 +107,31 @@
       @include media(lg) {
         padding: 30px 0 30px 30px;
       }
+      @include media(sm) {
+        padding: 0;
+        position: absolute;
+        z-index: 3;
+        top: 25px;
+        bottom: 25px;
+        left: 25px;
+      }
+
+      &-footer {
+        .btn {
+          span {
+            @include media(sm) {
+              display: none;
+            }
+          }
+          i {
+            font-style: normal;
+            display: none;
+            @include media(sm) {
+              display: block;
+            }
+          }
+        }
+      }
     }
 
     &-title {
@@ -91,14 +141,19 @@
       @include media(xl) {
         font-size: 30px;
       }
-      @include media(lg) {
-
+      @include media(sm) {
+        font-size: 18px;
+        margin: 0;
+        max-width: 200px;
       }
     }
 
     &-list {
       font-weight: 500;
       font-size: 16px;
+      @include media(sm) {
+        display: none;
+      }
 
       > li {
 

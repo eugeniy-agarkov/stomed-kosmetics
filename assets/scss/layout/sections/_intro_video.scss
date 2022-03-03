@@ -11,6 +11,7 @@
     &-left,
     &-right {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
     }
 
@@ -21,6 +22,10 @@
       }
       @include media(lg) {
         width: calc(100% - #{$right-width-lg});
+      }
+      @include media(sm) {
+        width: 100%;
+        margin: 0 0 35px 0;
       }
     }
 
@@ -34,6 +39,10 @@
         width: $right-width-lg;
         padding: 0 0 0 30px;
       }
+      @include media(sm) {
+        width: 100%;
+        padding: 0;
+      }
     }
 
   }
@@ -43,14 +52,23 @@
     h3 {
       font-weight: 500;
       margin: 0 0 15px 0;
+      @include media(sm) {
+        font-size: 18px;
+      }
     }
 
     .btn {
       margin-top: 30px;
+      @include media(sm) {
+        margin-top: 25px;
+      }
     }
 
     p {
       max-width: 390px;
+      @include media(sm) {
+        max-width: unset;
+      }
     }
   }
 
@@ -67,6 +85,12 @@
     @include media(xl) {
       padding: 0 0 0 40px;
       height: 470px;
+    }
+    @include media(sm) {
+      background-image: none;
+      padding: 0;
+      height: auto;
+      padding: 40px 0;
     }
 
     &:hover {
@@ -86,6 +110,11 @@
       @include media(lg) {
         background-size: 100%;
       }
+      @include media(sm) {
+        background: $color-blue-indigo;
+        left: -15px;
+        right: -15px;
+      }
     }
 
     &::before {
@@ -103,6 +132,17 @@
       z-index: 2;
       @include media(lg) {
         background-size: 75%;
+      }
+      @include media(sm) {
+        $size: 140px;
+        width: $size;
+        height: $size;
+        background-size: 100%;
+        left: unset;
+        top: unset;
+        right: 30px;
+        bottom: 50px;
+        transform: translateY(0) translateX(0);
       }
     }
 
@@ -126,6 +166,11 @@
         @include media(lg) {
           font-size: 42px;
         }
+        @include media(sm) {
+          font-weight: 500;
+          font-size: 24px;
+          margin: 0 0 5px 0;
+        }
       }
 
       p {
@@ -146,8 +191,12 @@
     $photo-width: 90px;
 
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     margin: 55px 0 0 0;
+    @include media(sm) {
+      margin: 20px 0 0 0;
+    }
 
     &-photo {
       width: $photo-width;
@@ -158,6 +207,9 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      @include media(sm) {
+        margin: 0 0 10px 0;
+      }
 
     }
 
@@ -167,17 +219,28 @@
       display: flex;
       align-items: center;
       color: #FFFFFF;
+      @include media(sm) {
+        width: 100%;
+        padding: 0;
+      }
 
       small {
         font-size: 14px;
         line-height: 1.1;
         display: block;
         margin: 0 0 9px 0;
+        @include media(sm) {
+          font-size: 12px;
+          margin: 0 0 5px 0;
+        }
       }
 
       span {
         font-weight: 600;
         font-size: 18px;
+        @include media(sm) {
+          font-size: 14px;
+        }
       }
     }
   }

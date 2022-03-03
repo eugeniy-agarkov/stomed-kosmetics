@@ -18,6 +18,7 @@ jQuery( function( $ ) {
 		{
 
 			this.search()
+			this.mobile_menu()
 			this.advantages()
 			this.reviews()
 
@@ -47,14 +48,19 @@ jQuery( function( $ ) {
 			const swiperAdvantages = new Swiper('.swiperAdvantages', {
 				loop: true,
 				speed: 400,
-				spaceBetween: 15,
-				slidesPerView: 1,
+				spaceBetween: 20,
+				slidesPerView: 'auto',
 				pagination: {
 					el: '.swiperAdvantages .swiper-pagination',
 				},
 				breakpoints: {
+					768: {
+						slidesPerView: 2,
+						spaceBetween: 15,
+					},
 					1000: {
 						slidesPerView: 4,
+						spaceBetween: 15,
 					},
 					1400: {
 						slidesPerView: 4,
@@ -62,6 +68,38 @@ jQuery( function( $ ) {
 					}
 				}
 			});
+
+		},
+
+		/**
+		 * Mobile Menu
+		 */
+		mobile_menu: function ()
+		{
+
+			/**
+			 * Open Menu
+			 */
+			$(document).on('click', '.mobileMenu', function(e) {
+
+				e.preventDefault();
+
+				$('body').toggleClass('menu__active')
+
+			})
+
+			/**
+			 * Accordion Menu
+			 */
+			$(document).on('click', '.mobileMenuAccordionItem', function(e) {
+
+				e.preventDefault();
+
+				let $this = $(this)
+
+				$this.parent().toggleClass('active')
+
+			})
 
 		},
 

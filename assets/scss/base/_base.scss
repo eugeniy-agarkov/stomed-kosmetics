@@ -87,6 +87,9 @@ h2 {
     @include media(xl) {
         font-size: 36px;
     }
+    @include media(md) {
+        font-size: 24px;
+    }
 }
 h3 {
     font-size: 36px;
@@ -108,5 +111,8 @@ section {
     margin-bottom: 85px;
     @include media(xl) {
         margin-bottom: 50px;
+    }
+    @include media(md) {
+        margin-bottom: 40px;
     }
 }

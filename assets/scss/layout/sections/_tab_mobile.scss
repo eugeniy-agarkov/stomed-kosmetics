@@ -1,0 +1,44 @@
+.tab_mobile {
+
+  &__link {
+    display: none;
+    font-weight: 600;
+    font-size: 14px;
+    position: relative;
+    text-decoration: underline;
+    @include media(sm) {
+      display: inline-flex;
+    }
+
+    &::after {
+      $size: 12px;
+
+      content: '';
+      width: $size;
+      height: $size;
+      position: absolute;
+      background: url('../images/icons/arrow-bottom.svg') center center no-repeat;
+      background-size: 90%;
+      top: 4px;
+      right: -19px;
+    }
+
+    &.active {
+      &::after {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  &__content {
+    @include media(sm) {
+      padding: 18px 0 0 0;
+      display: none;
+    }
+
+    &.active {
+      display: flex;
+    }
+  }
+
+}

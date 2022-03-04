@@ -12,6 +12,7 @@
       $left-width: 230px;
 
       display: flex;
+      flex-wrap: wrap;
 
       &-left,
       &-right {
@@ -20,6 +21,10 @@
 
       &-left {
         width: $left-width;
+        @include media(md) {
+          width: 100%;
+          margin: 0 0 15px 0;
+        }
       }
 
       &-right {
@@ -27,6 +32,10 @@
         padding: 0 0 0 150px;
         @include media(xl) {
           padding: 0 0 0 50px;
+        }
+        @include media(md) {
+          padding: 0;
+          width: 100%;
         }
       }
     }
@@ -45,6 +54,7 @@
 
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
 
       &-left,
       &-right {
@@ -58,6 +68,10 @@
           width: $left-width-lg;
           padding: 0 30px 0 0;
         }
+        @include media(sm) {
+          width: 100%;
+          padding: 0 0 15px 0;
+        }
 
         small {
           font-weight: normal;
@@ -67,6 +81,9 @@
           @include media(lg) {
             font-size: 13px;
           }
+          @include media(sm) {
+            font-size: 14px;
+          }
         }
       }
 
@@ -74,6 +91,9 @@
         width: calc(100% - #{$left-width});
         @include media(lg) {
           width: calc(100% - #{$left-width-lg});
+        }
+        @include media(sm) {
+          width: 100%;
         }
 
         p {
@@ -88,6 +108,9 @@
           @include media(lg) {
             font-size: 13px;
           }
+          @include media(sm) {
+            font-size: 12px;
+          }
         }
       }
     }
@@ -99,6 +122,51 @@
     font-weight: 500;
     @include media(lg) {
       white-space: nowrap;
+    }
+
+    &.contact {
+      @include media(sm) {
+        margin: 35px 0 20px 0;
+        font-size: 24px;
+      }
+    }
+
+    &.socials {
+      @include media(sm) {
+        font-size: 24px;
+        margin: 0 0 15px 0;
+      }
+    }
+
+    &.menu {
+      @include media(sm) {
+        position: relative;
+        font-size: 18px;
+        margin: 0;
+        height: 70px;
+        border-bottom: 1px solid rgba(66, 110, 170, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        cursor: pointer;
+      }
+
+      &::after {
+        @include media(sm) {
+          $size: 12px;
+
+          content: '';
+          display: block;
+          width: $size;
+          height: $size;
+          position: absolute;
+          top: 50%;
+          margin-top: -6px;
+          right: 0;
+          background: url('../images/icons/arrow-bottom.svg') right center no-repeat;
+          background-size: 100%;
+        }
+      }
     }
   }
 
@@ -132,9 +200,41 @@
     position: relative;
     margin-left: -#{$gutter};
     margin-right: -#{$gutter};
+    @include media(sm) {
+      flex-wrap: wrap;
+    }
 
     > li {
       padding: 0 $gutter;
+      @include media(sm) {
+        width: 100%;
+      }
+
+      &.active {
+        .footer {
+          &__columns {
+            &-list {
+              @include media(sm) {
+                display: block;
+              }
+            }
+          }
+          &__title {
+            @include media(sm) {
+              border-bottom-color: transparent;
+            }
+
+            &.menu {
+              &::after {
+                @include media(sm) {
+                  transform: rotate(-180deg);
+                }
+              }
+
+            }
+          }
+        }
+      }
     }
 
     &-list {
@@ -142,6 +242,11 @@
       font-size: 16px;
       @include media(lg) {
         font-size: 14px;
+      }
+      @include media(sm) {
+        display: none;
+        padding: 0 0 30px 0;
+        border-bottom: 1px solid rgba(66, 110, 170, 0.1);
       }
 
       > li {
@@ -175,6 +280,9 @@
           line-height: 1.1;
           margin: 0 0 5px 0;
           white-space: nowrap;
+          @include media(sm) {
+            font-size: 14px;
+          }
         }
 
         span,

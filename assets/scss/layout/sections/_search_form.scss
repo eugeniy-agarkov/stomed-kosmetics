@@ -1,0 +1,26 @@
+.search_form {
+
+  &__form {
+    $button-width: 200px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    [type="text"],
+    [type="search"] {
+      width: calc(100% - #{$button-width} - 40px);
+      border: 1px solid $color-blue-light;
+      background: $color-blue-light url('../images/icons/search.svg') 98% center no-repeat;
+      border-radius: 99px;
+      padding: 0 30px;
+
+    }
+
+    [type="submit"] {
+      width: $button-width;
+    }
+
+  }
+
+}

@@ -17,10 +17,72 @@ jQuery( function( $ ) {
 		init: function ()
 		{
 
+			this.nav()
 			this.search()
 			this.mobile_menu()
 			this.advantages()
 			this.reviews()
+			this.tab_mobile()
+			this.footer_menu()
+
+		},
+
+		/**
+		 * Scroll Nav Fixed
+		 */
+		nav: function ()
+		{
+
+			let $container = $('.header__bottom'),
+				offset = $container.offset().top
+
+			$(window).scroll(function () {
+
+				var scroll = $(window).scrollTop()
+
+				if (scroll > offset)
+				{
+					$container.addClass('fixed')
+				}else{
+					$container.removeClass('fixed')
+				}
+
+		})
+
+		},
+
+		footer_menu: function ()
+		{
+
+
+			$(document).on('click', '.footerMenuMobile', function(e) {
+
+				e.preventDefault();
+
+				const $this = $(this)
+
+				$this.parent().toggleClass('active')
+
+			})
+
+		},
+
+		/**
+		 * Tab Mobile
+		 */
+		tab_mobile: function ()
+		{
+
+			$(document).on('click', '.tab_mobile__link', function(e) {
+
+				e.preventDefault();
+
+				const 	$this = $(this),
+						$content = $this.parent().find('.tab_mobile__content')
+
+				$this.toggleClass('active')
+				$content.toggleClass('active')
+			})
 
 		},
 

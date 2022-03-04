@@ -77,6 +77,27 @@
 
   }
 
+  &__bottom {
+    height: 80px;
+    border-bottom: 1px solid rgba(66, 110, 170, 0.1);
+    @include media(xl) {
+      height: 50px;
+    }
+    &.fixed {
+      .header__bottom-inner {
+        @include media_min(md) {
+          position: fixed;
+          z-index: 99;
+          top: 0;
+          left: 0;
+          right: 0;
+          background-color: #fff;
+        }
+      }
+
+    }
+  }
+
   &__locations {
     display: flex;
     justify-content: space-between;
@@ -145,8 +166,6 @@
     }
 
   }
-
-
 
   &__logo {
     margin: 0 60px 0 0;

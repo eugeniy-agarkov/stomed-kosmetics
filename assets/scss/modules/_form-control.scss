@@ -1,0 +1,8 @@
+.form {
+  &-control {
+    height: 56px;
+    @include media(xl) {
+      height: 48px;
+    }
+  }
+}

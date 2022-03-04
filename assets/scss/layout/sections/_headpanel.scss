@@ -10,6 +10,7 @@
     margin: 0;
     @include media(sm) {
       width: 100%;
+      margin: 0 0 20px 0;
     }
   }
 
@@ -23,18 +24,33 @@
       align-items: flex-start;
       justify-content: space-between;
       padding: 15px 0 0 0;
+      flex-direction: column;
+
     }
 
     a {
 
       &.btn {
+        @include media(sm) {
+          width: 100%;
+          justify-content: flex-start;
+        }
 
         &:not(:first-child) {
           margin-left: 15px;
+          @include media(sm) {
+            margin-left: 0;
+          }
+        }
+
+        &:not(:last-child) {
+          @include media(sm) {
+            margin: 0 0 12px 0;
+          }
         }
       }
 
-      &:not(.btn) {
+      &:not(.btn):not(.tab_mobile__link) {
         background: url("../images/icons/arrow-right.svg") right center no-repeat;
         padding: 0 25px 0 0;
         font-weight: 500;

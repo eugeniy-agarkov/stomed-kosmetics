@@ -85,5 +85,17 @@
         }
     }
 
+    &-blue {
+        border-color: $color-blue-indigo;
+        background-color: $color-blue-indigo;
+        color: #fff;
+
+        &:hover {
+            border-color: $color-blue;
+            background-color: $color-blue;
+            color: #fff;
+        }
+    }
+
 
 }

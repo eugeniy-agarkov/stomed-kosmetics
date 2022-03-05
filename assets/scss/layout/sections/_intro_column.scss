@@ -1,0 +1,22 @@
+.intro_column {
+
+  &__row {
+    $right-width: 400px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    &-left {
+      width: calc(100% - #{$right-width});
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &-right {
+      width: $right-width;
+      display: flex;
+    }
+  }
+
+}

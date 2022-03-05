@@ -1,4 +1,5 @@
 @import url('../css/plugins/swiper.min.css');
+@import url('../css/plugins/nouislider.min.css');
 //@import url('../css/plugins/select2.min.css');
 /**
  * Variables
@@ -25,6 +26,9 @@
 @import "modules/btn";
 @import "modules/form-control";
 @import "modules/swiper";
+@import "modules/range_slider";
+@import "modules/pagination";
+@import "modules/breadcrumbs";
 
 /**
  * Layout
@@ -45,9 +49,12 @@
 @import "layout/sections/intro_video";
 @import "layout/sections/contacts";
 @import "layout/sections/tab_mobile";
-@import "layout/sections/breadcrumbs";
 @import "layout/sections/title_page";
 @import "layout/sections/search_form";
+@import "layout/sections/sidebar";
+@import "layout/sections/filter";
+@import "layout/sections/services";
+@import "layout/sections/intro_column";
 
 /**
  * Pages

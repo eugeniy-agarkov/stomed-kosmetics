@@ -29,6 +29,8 @@
 @import "modules/range_slider";
 @import "modules/pagination";
 @import "modules/breadcrumbs";
+@import "modules/text_style";
+@import "modules/collapse";
 
 /**
  * Layout
@@ -55,6 +57,11 @@
 @import "layout/sections/filter";
 @import "layout/sections/services";
 @import "layout/sections/intro_column";
+@import "layout/sections/excerpt";
+@import "layout/sections/prices";
+@import "layout/sections/cta_submit";
+@import "layout/sections/gallery_last";
+@import "layout/sections/mobile_panel";
 
 /**
  * Pages

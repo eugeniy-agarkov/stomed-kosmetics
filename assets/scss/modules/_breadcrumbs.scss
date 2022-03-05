@@ -10,9 +10,12 @@
     font-size: 14px;
     color: $color-blue-indigo;
     display: flex;
+    white-space: nowrap;
+    overflow: auto;
 
 
     > li {
+      white-space: nowrap;
 
       &:not(:last-child) {
         padding: 0 15px 0 0;
@@ -22,6 +25,7 @@
 
       > a {
         color: $color-blue;
+        white-space: nowrap;
       }
 
     }

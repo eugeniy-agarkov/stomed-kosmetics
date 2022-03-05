@@ -1,0 +1,35 @@
+.mobile_panel {
+  display: none;
+  margin: 0 0 20px 0;
+  max-width: 600px;
+
+  @include media(md) {
+    display: block;
+  }
+
+  &__row {
+    $gutter: 6px;
+
+    display: flex;
+    position: relative;
+    margin-left: -#{$gutter};
+    margin-right: -#{$gutter};
+    margin-bottom: 0;
+
+    > li {
+      display: flex;
+      padding: 0 $gutter;
+      width: 50%;
+    }
+
+    .btn {
+      background: #E8F3F8;
+      border-radius: 5px;
+      padding: 0;
+      border: none;
+      display: flex;
+      width: 100%;
+      color: $color-blue;
+    }
+  }
+}

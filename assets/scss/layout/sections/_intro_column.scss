@@ -1,7 +1,8 @@
 .intro_column {
 
   &__row {
-    $right-width: 400px;
+    $right-width: 60%;
+    $right-width-lg: 50%;
 
     display: flex;
     flex-wrap: wrap;
@@ -11,11 +12,217 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      padding: 0 30px 0 0;
+      @include media(lg) {
+        width: calc(100% - #{$right-width-lg});
+      }
+      @include media(md) {
+        width: 100%;
+        padding: 0;
+        order: 2;
+      }
     }
 
     &-right {
       width: $right-width;
       display: flex;
+      margin-left: auto;
+      max-width: 900px;
+      @include media(lg) {
+        width: $right-width-lg;
+      }
+      @include media(md) {
+        width: 100%;
+        padding: 0;
+        order: 1;
+      }
+
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 48px;
+    max-width: 530px;
+    margin: 0 0 25px 0;
+    @include media(xl) {
+      font-size: 36px;
+    }
+    @include media(lg) {
+      font-size: 32px;
+    }
+
+    &.mobile {
+      display: none;
+      font-size: 24px;
+      max-width: unset;
+      margin: 0 0 20px 0;
+      @include media(md) {
+        display: block;
+      }
+    }
+
+    &.desctope {
+      @include media(md) {
+        display: none;
+      }
+    }
+  }
+
+  &__footer {
+
+    &-list {
+      $icon-width: 40px;
+      $icon-width-md: 30px;
+
+      display: flex;
+      flex-direction: column;
+      font-size: 16px;
+      color: $color-blue;
+      @include media(lg) {
+        font-size: 14px;
+      }
+
+      > li {
+        display: flex;
+        align-items: center;
+
+        &:not(:last-child) {
+          margin: 0 0 15px 0;
+        }
+
+        > div {
+          width: $icon-width;
+          @include media(md) {
+            width: $icon-width-md;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+          }
+
+          img,
+          svg {
+            @include media(md) {
+              height: 19px;
+            }
+          }
+        }
+
+        span {
+          width: calc(100% - #{$icon-width});
+        }
+      }
+    }
+
+    &-btn {
+      display: flex;
+      padding: 40px 0 0 0;
+      @include media(lg) {
+        padding: 15px 0 0 0;
+      }
+      @include media(xs) {
+        flex-direction: column;
+      }
+
+      .btn {
+        @include media(xs) {
+          max-width: 260px;
+        }
+        &:not(:first-child) {
+          margin: 0 0 0 30px;
+          @include media(lg) {
+            margin: 0 0 0 6px;
+          }
+          @include media(xs) {
+            margin: 0;
+          }
+        }
+        &:not(:last-child) {
+          @include media(xs) {
+            margin: 0 0 15px 0;
+          }
+        }
+      }
+    }
+
+  }
+
+  &__slider {
+    position: relative;
+    padding: 0 110px 0 0;
+    display: block;
+    width: 100%;
+    @include media(lg) {
+      padding: 0 80px 0 0;
+    }
+    @include media(md) {
+      padding: 0;
+    }
+
+    &-big {
+      img {
+        border-radius: 10px;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &-thumb {
+      position: absolute;
+      width: 90px;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      @include media(lg) {
+        width: 60px;
+      }
+      @include media(md) {
+        display: none;
+      }
+
+      img {
+        border-radius: 10px;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border: 1px solid transparent;
+        cursor: pointer;
+      }
+
+      .swiper {
+        &-slide {
+          width: 90px;
+          height: 60px;
+          @include media(lg) {
+            width: 60px;
+            height: 50px;
+          }
+
+          &-thumb {
+            &-active {
+              img {
+                border-color: $color-blue-indigo;
+              }
+            }
+          }
+
+        }
+      }
+
+    }
+
+    .swiper {
+      &-pagination {
+        display: none;
+        justify-content: center;
+        bottom: unset;
+        height: 25px;
+        @include media(md) {
+          display: flex;
+          padding: 15px 0;
+        }
+      }
     }
   }
 

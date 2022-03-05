@@ -31,6 +31,11 @@
         padding: 0px 20px;
     }
 
+    &-sm {
+        height: 40px;
+        font-size: 12px;
+    }
+
     &:hover {
         text-decoration: none;
         background-color: transparent;
@@ -80,8 +85,13 @@
     }
 
     .icon {
+        $offset: 10px;
+
         &.left {
-            margin-right: 10px;
+            margin-right: $offset;
+        }
+        &.right {
+            margin-left: $offset;
         }
     }
 

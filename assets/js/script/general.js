@@ -24,6 +24,9 @@ jQuery( function( $ ) {
 			this.reviews()
 			this.tab_mobile()
 			this.footer_menu()
+			this.intro_column_swiper()
+			this.collapse()
+			this.mobile_panel()
 
 		},
 
@@ -47,10 +50,13 @@ jQuery( function( $ ) {
 					$container.removeClass('fixed')
 				}
 
-		})
+			})
 
 		},
 
+		/**
+		 * Footer Menu
+		 */
 		footer_menu: function ()
 		{
 
@@ -171,6 +177,9 @@ jQuery( function( $ ) {
 		reviews: function()
 		{
 
+			/**
+			 * Slider
+			 */
 			const swiperReviews = new Swiper('.swiperReviews', {
 				loop: false,
 				speed: 300,
@@ -189,65 +198,115 @@ jQuery( function( $ ) {
 
 		},
 
+		/**
+		 * Intro Column Swiper
+		 */
+		intro_column_swiper: function ()
+		{
+
+			/**
+			 * Thumb
+			 */
+			var introColumnSwiperThumb = new Swiper('.introColumnSwiperThumb', {
+				loop: false,
+				spaceBetween: 15,
+				slidesPerView: 'auto',
+				freeMode: true,
+				watchSlidesProgress: true,
+				direction: "vertical",
+			})
+
+			/**
+			 * Big
+			 */
+			var introColumnSwiperBig = new Swiper(".introColumnSwiperBig", {
+				loop: true,
+				spaceBetween: 15,
+				navigation: {
+					nextEl: ".introColumnSwiperBig .swiper-button-next",
+					prevEl: ".introColumnSwiperBig .swiper-button-prev",
+				},
+				pagination: {
+					el: '.introColumnSwiperBig .swiper-pagination',
+				},
+				thumbs: {
+					swiper: introColumnSwiperThumb,
+				},
+			})
+
+		},
+
+		/**
+		 * Collapse
+		 */
+		collapse: function ()
+		{
+
+			/**
+			 * Click
+			 */
+			$(document).on('click', '.buttonCollapse', function(e) {
+
+				e.preventDefault()
+
+				let $this = $(this),
+					text_default = $this.data('text-collapse'),
+					text_collapsed = $this.data('text-collapsed'),
+					$content = $this.parent().parent().find('.textCollapse')
+
+				if( $content.hasClass('active') )
+				{
+
+					$this.find('span').text(text_default)
+					$this.parent().parent().find('.textCollapse').removeClass('active')
+					$this.removeClass('active')
+
+				}else{
+
+					$this.find('span').text(text_collapsed)
+					$this.parent().parent().find('.textCollapse').addClass('active')
+					$this.addClass('active')
+
+				}
+
+
+			})
+
+		},
+
+		/**
+		 * Mobile Panel
+		 */
+		mobile_panel: function ()
+		{
+
+			/**
+			 * Open Search
+			 */
+			$(document).on('click', '.mobilePanelSearch', function(e) {
+
+				e.preventDefault();
+
+				$('.search_form').toggleClass('active')
+
+			})
+
+			/**
+			 * Open Filter
+			 */
+			$(document).on('click', '.mobilePanelFilter', function(e) {
+
+				e.preventDefault();
+
+				$('.mobilePanelFilterContent').toggleClass('active')
+
+			})
+
+
+		}
 
 	}
 
 	Site.init()
-
-	/******************************************************************
-	 * Home
-	 * @type {{init: Home.init, install: Home.install}}
-	 * @since 1.0
-	 * @author Alex Cherniy
-	 * @date 22.02.2022
-	 */
-	var Home = {
-
-		/**
-		 * Init
-		 */
-		init: function ()
-		{
-
-			this.install  = this.install( this )
-
-
-		},
-
-		/**
-		 * Install
-		 */
-		install: function()
-		{
-
-			/**
-			 * Intro
-			 */
-			$( document ).on(
-				'click',
-				'.homeIntroPoint',
-				this.intro )
-
-		},
-
-		/**
-		 * Intro Section
-		 */
-		intro: function(e)
-		{
-
-			e.preventDefault()
-
-			let $this = $(this)
-
-			$this.parent().toggleClass('active')
-
-
-		},
-
-
-	}
-
-	Home.init()
 
 });

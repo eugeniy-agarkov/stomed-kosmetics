@@ -1,0 +1,103 @@
+.cta_submit {
+
+  &__inner {
+    background: $color-blue-indigo url("../images/cta_submit_background.png") center bottom no-repeat;
+    border-radius: 20px;
+    padding: 65px 30px;
+    @include media(sm) {
+      padding: 45px 30px;
+    }
+  }
+
+  &__title {
+    color: #fff;
+    max-width: 615px;
+    margin: 0 auto 30px auto;
+    display: block;
+    width: 100%;
+    text-align: center;
+    @include media(sm) {
+      font-size: 24px;
+      margin: 0 auto 24px auto;
+    }
+  }
+
+  &__form {
+    $inp-height: 70px;
+    $radius: 10px;
+
+    max-width: 860px;
+    margin: 0 auto;
+
+    fieldset {
+      border: none;
+    }
+
+    form {
+
+    }
+
+    label {
+      display: block;
+      color: #fff;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 1.1;
+      margin: 0 0 10px 0;
+
+      span {
+        color: $color-orange;
+      }
+    }
+
+    input {
+
+      &[type="text"],
+      &[type="tel"],
+      &[type="email"] {
+        display: block;
+        width: 100%;
+        border: 1px solid #FFFFFF;
+        border-radius: $radius;
+        padding: 0 30px;
+        height: $inp-height;
+        color: #fff;
+        background-color: transparent;
+
+        @include placeholder {
+          font-weight: 500;
+          font-size: 14px;
+          color: #80A4D5;
+        }
+
+        @include media(sm) {
+          margin-bottom: 15px;
+        }
+      }
+    }
+
+    [type="submit"] {
+      height: $inp-height;
+      display: block;
+      width: 100%;
+      border-radius: $radius;
+      background-color: #fff;
+      padding: 0;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 14px;
+      border: none;
+      box-shadow: unset;
+      cursor: pointer;
+      margin: 25px 0 0 0;
+      color: $color-blue-indigo;
+
+      &:hover {
+        background-color: $color-blue;
+        color: #fff;
+      }
+    }
+
+  }
+
+}

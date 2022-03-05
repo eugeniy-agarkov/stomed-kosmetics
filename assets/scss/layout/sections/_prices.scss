@@ -1,0 +1,273 @@
+.prices {
+
+  &__title {
+    margin: 0 0 50px 0;
+    @include media(xl) {
+      margin: 0 0 30px 0;
+    }
+    @include media(md) {
+      font-size: 24px;
+    }
+    @include media(sm) {
+      margin: 0 0 30px 0;
+    }
+  }
+
+  &__table {
+    $border-color: #ECF0F7;
+    $border-radius: 10px;
+
+    width: 100%;
+    max-width: 100%;
+    background-color: transparent;
+    border-spacing: 0;
+    border-collapse: collapse;
+    border-radius: $border-radius;
+
+    th,
+    td {
+      padding: 25px 40px;
+      text-align: left;
+      @include media(xl) {
+        padding: 15px 20px;
+      }
+      @include media(md) {
+        padding: 0;
+      }
+    }
+
+    th,
+    td,
+    tr {
+      @include media(md) {
+        display: block;
+      }
+    }
+
+    thead {
+      @include media(md) {
+        display: none;
+      }
+      > tr {
+        > th {
+          text-transform: uppercase;
+          font-weight: 600;
+          font-size: 14px;
+          color: $color-blue;
+          background-color: #ECF0F7;
+          white-space: nowrap;
+          @include media(xl) {
+            font-size: 13px;
+          }
+
+          &:first-child {
+            border-top-left-radius: $border-radius;
+            border-left: 1px solid transparent;
+            @include media(md) {
+              border-radius: 0;
+              border: none;
+            }
+          }
+
+          &:last-child {
+            border-top-right-radius: $border-radius;
+            border-right: 1px solid transparent;
+            @include media(md) {
+              border-radius: 0;
+              border: none;
+            }
+          }
+        }
+      }
+    }
+
+    tbody {
+
+      > tr {
+        > td {
+          border-bottom: 1px solid $border-color;
+          @include media(md) {
+            border-radius: 0;
+            border: none;
+          }
+
+          &:first-child {
+            border-left: 1px solid $border-color;
+            @include media(md) {
+              border-radius: 0;
+              border: none;
+            }
+          }
+
+          &:last-child {
+            border-right: 1px solid $border-color;
+            @include media(md) {
+              border-radius: 0;
+              border: none;
+            }
+          }
+
+        }
+
+        &:last-child {
+          > td {
+            &:first-child {
+              border-bottom-left-radius: $border-radius;
+            }
+            &:last-child {
+              border-bottom-right-radius: $border-radius;
+            }
+          }
+        }
+
+        &:not(:first-child) {
+          > td {
+            &:first-child {
+              @include media(md) {
+                padding-top: 30px;
+              }
+            }
+          }
+        }
+
+        &:not(:last-child) {
+          > td {
+            &:last-child {
+              @include media(md) {
+                border-bottom: 1px solid $border-color;
+                padding-bottom: 30px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &-title {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1.2;
+      color: $color-blue;
+      text-transform: uppercase;
+      @include media(xl) {
+        font-size: 14px;
+      }
+      @include media(md) {
+        font-size: 16px;
+        margin: 0 0 15px 0;
+      }
+    }
+
+    &-location {
+      position: relative;
+      font-size: 14px;
+      color: $color-blue-indigo;
+      padding: 0 0 0 30px;
+      @include media(xl) {
+        font-size: 13px;
+      }
+      @include media(md) {
+        font-size: 14px;
+        margin: 0 0 15px 0;
+      }
+
+      &::after {
+        $size: 16px;
+
+        content: '';
+        display: block;
+        width: $size;
+        height: $size;
+        background: url("../images/icons/pin.svg") left center no-repeat;
+        background-size: contain;
+        position: absolute;
+        left: 0;
+        top: 1px;
+      }
+    }
+
+    &-price {
+      font-weight: bold;
+      font-size: 24px;
+      color: $color-blue;
+      white-space: nowrap;
+      @include media(xl) {
+        font-size: 18px;
+      }
+      @include media(md) {
+        font-size: 24px;
+        margin: 0 0 15px 0;
+      }
+
+      &.empty {
+        @include media(md) {
+          display: none;
+        }
+      }
+
+      small {
+        font-size: 18px;
+      }
+
+      &.orange {
+        color: $color-orange;
+      }
+
+    }
+
+    &-description {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 1.3;
+      @include media(xl) {
+        font-size: 13px;
+      }
+      @include media(md) {
+        font-size: 14px;
+        margin: 0 0 15px 0;
+      }
+
+      &.empty {
+        @include media(md) {
+          display: none;
+        }
+      }
+
+      &.orange {
+        color: $color-orange;
+      }
+    }
+
+    .border {
+      position: relative;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 44px;
+        width: 1px;
+        background-color: $border-color;
+        left: -40px;
+        top: 50%;
+        margin-top: -22px;
+        @include media(xl) {
+          left: -20px;
+        }
+        @include media(md) {
+          display: none;
+        }
+
+      }
+    }
+
+    b {
+      display: block;
+      text-align: center;
+      font-weight: bold;
+      font-size: 30px;
+      color: #DBE8EF;
+    }
+
+  }
+}

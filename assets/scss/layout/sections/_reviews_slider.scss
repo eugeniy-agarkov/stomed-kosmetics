@@ -75,7 +75,10 @@
 
       .btn {
         &:nth-child(2) {
-          display: none;
+          @include media(sm) {
+            display: none;
+          }
+
         }
       }
     }

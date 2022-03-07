@@ -28,32 +28,37 @@ jQuery( function( $ ) {
 		slider: function ()
 		{
 
-			var stepsSlider = document.getElementById('steps-slider');
-			var input0 = document.getElementById('input-with-keypress-0');
-			var input1 = document.getElementById('input-with-keypress-1');
-			var inputs = [input0, input1];
+			if( $('#steps-slider').length )
+			{
 
-			noUiSlider.create(stepsSlider, {
-				start: [0, 100000],
-				range: {
-					'min': [0],
-					'max': [100000]
-				},
-				connect: true,
-				tooltips: false,
-				format: {
-					to: function (value) {
-						return Math.round(value) + ' руб.';
+				var stepsSlider = document.getElementById('steps-slider');
+				var input0 = document.getElementById('input-with-keypress-0');
+				var input1 = document.getElementById('input-with-keypress-1');
+				var inputs = [input0, input1];
+
+				noUiSlider.create(stepsSlider, {
+					start: [0, 100000],
+					range: {
+						'min': [0],
+						'max': [100000]
 					},
-					from: function (value) {
-						return value.replace(' руб.', '');
+					connect: true,
+					tooltips: false,
+					format: {
+						to: function (value) {
+							return Math.round(value) + ' руб.';
+						},
+						from: function (value) {
+							return value.replace(' руб.', '');
+						}
 					}
-				}
-			});
+				});
 
-			stepsSlider.noUiSlider.on('update', function (values, handle) {
-				inputs[handle].value = values[handle];
-			});
+				stepsSlider.noUiSlider.on('update', function (values, handle) {
+					inputs[handle].value = values[handle];
+				});
+
+			}
 
 		},
 

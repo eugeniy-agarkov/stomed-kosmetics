@@ -1,6 +1,6 @@
 @import url('../css/plugins/swiper.min.css');
 @import url('../css/plugins/nouislider.min.css');
-//@import url('../css/plugins/select2.min.css');
+@import url('../css/plugins/jquery-ui.css');
 /**
  * Variables
  */
@@ -62,6 +62,12 @@
 @import "layout/sections/cta_submit";
 @import "layout/sections/gallery_last";
 @import "layout/sections/mobile_panel";
+@import "layout/sections/doctors_grid";
+@import "layout/sections/doctors_detail";
+@import "layout/sections/sert";
+@import "layout/sections/sert_last";
+@import "layout/sections/sales";
+@import "layout/sections/sales_last";
 
 /**
  * Pages

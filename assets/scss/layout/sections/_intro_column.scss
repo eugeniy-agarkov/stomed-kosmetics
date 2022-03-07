@@ -35,8 +35,50 @@
         width: 100%;
         padding: 0;
         order: 1;
+        max-width: unset;
       }
 
+      &.no {
+        &-maxwidth {
+          max-width: unset;
+
+        }
+      }
+
+    }
+  }
+
+  &__header {
+    margin: 0 0 25px 0;
+    @include media(sm) {
+      margin: 0;
+    }
+  }
+
+  &__excerpt {
+    font-weight: normal;
+    font-size: 18px;
+    color: $color-gray;
+    padding: 20px 0 0 0;
+    margin: 0 0 35px 0;
+    position: relative;
+    @include media(md) {
+      margin: -15px 0 15px 0;
+      padding: 0;
+      font-size: 16px;
+    }
+
+    &.desctope {
+      @include media(md) {
+        display: none;
+      }
+    }
+
+    &.mobile {
+      display: none;
+      @include media(md) {
+        display: block;
+      }
     }
   }
 
@@ -44,7 +86,8 @@
     font-weight: 600;
     font-size: 48px;
     max-width: 530px;
-    margin: 0 0 25px 0;
+    margin: 0;
+
     @include media(xl) {
       font-size: 36px;
     }
@@ -110,6 +153,12 @@
 
         span {
           width: calc(100% - #{$icon-width});
+
+          strong {
+            font-weight: normal;
+            color: $color-gray;
+          }
+
         }
       }
     }
@@ -126,7 +175,8 @@
 
       .btn {
         @include media(xs) {
-          max-width: 260px;
+          max-width: 320px;
+          width: 100%;
         }
         &:not(:first-child) {
           margin: 0 0 0 30px;
@@ -224,6 +274,101 @@
         }
       }
     }
+  }
+
+  &__image {
+    position: relative;
+    width: 100%;
+
+    &.is {
+      &-share {
+        padding-right: 130px;
+        @include media(xl) {
+          padding-right: 110px;
+        }
+        @include media(lg) {
+          padding-right: 90px;
+        }
+        @include media(md) {
+          padding-right: 0px;
+        }
+      }
+    }
+
+    &-img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__share {
+    $size: 40px;
+    $size-lg: 30px;
+
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    width: $size;
+    @include media(lg) {
+      width: $size-lg;
+    }
+    @include media(md) {
+      display: none;
+    }
+
+    span {
+      font-weight: 600;
+      font-size: 16px;
+      text-transform: uppercase;
+      position: relative;
+      transform: rotate(-90deg);
+      top: -40px;
+      left: -2px;
+      color: $color-blue;
+      @include media(xl) {
+        font-size: 14px;
+        top: -30px;
+        left: -1px;
+      }
+      @include media(lg) {
+        font-size: 12px;
+        top: -20px;
+      }
+    }
+
+    ul {
+
+      > li {
+
+        &:not(:last-child) {
+          margin: 0 0 5px 0;
+        }
+
+        a {
+          display: flex;
+          width: $size;
+          height: $size;
+          @include media(lg) {
+            width: $size-lg;
+            height: $size-lg;
+          }
+        }
+      }
+
+      img,
+      svg {
+        height: $size;
+        @include media(lg) {
+          width: $size-lg;
+        }
+      }
+
+    }
+
   }
 
 }

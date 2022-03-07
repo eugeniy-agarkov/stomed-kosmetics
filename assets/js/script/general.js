@@ -216,6 +216,7 @@ jQuery( function( $ ) {
 				direction: "vertical",
 			})
 
+
 			/**
 			 * Big
 			 */
@@ -303,7 +304,7 @@ jQuery( function( $ ) {
 			})
 
 
-		}
+		},
 
 	}
 

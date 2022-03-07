@@ -69,7 +69,7 @@
     &-white {
         background-color: #fff;
         border-color: #fff;
-        color: #4289EE;
+        color: $color-blue-super;
 
         &:hover {
             background-color: $color-blue;
@@ -104,6 +104,12 @@
             border-color: $color-blue;
             background-color: $color-blue;
             color: #fff;
+        }
+    }
+
+    &-not {
+        &-rounded {
+            border-radius: 10px;
         }
     }
 

@@ -75,16 +75,16 @@
 
     &-link {
       border-radius: 5px;
-      border: 1px solid #4289EE;
-      color: #4289EE;
+      border: 1px solid $color-blue-super;
+      color: $color-blue-super;
       @include media(md) {
         width: 100%;
       }
 
       &:hover {
-        color: #4289EE;
+        color: $color-blue-super;
         background-color: transparent;
-        border-color: #4289EE;
+        border-color: $color-blue-super;
       }
     }
 

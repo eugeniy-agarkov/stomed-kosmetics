@@ -37,6 +37,13 @@ main {
 
 .hidden {
     display: none;
+
+    &-md {
+        @include media(md) {
+            display: none !important;
+        }
+    }
+
 }
 
 a {
@@ -123,5 +130,13 @@ section {
     }
     @include media(md) {
         margin-bottom: 40px;
+    }
+}
+
+.visible {
+    &-mobile {
+        @include media_min(sm) {
+            display: none;
+        }
     }
 }

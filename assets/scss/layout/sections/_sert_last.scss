@@ -1,0 +1,64 @@
+.sert_last {
+
+  &__title {
+    margin: 0 0 70px 0;
+    @include media(xl) {
+      margin: 0 0 30px 0;
+    }
+    @include media(sm) {
+      margin: 0 0 25px 0;
+    }
+  }
+
+  &__slider {
+    position: relative;
+    padding: 0 120px;
+    @include media(xl) {
+      padding: 0 70px;
+    }
+    @include media(md) {
+      padding: 0;
+    }
+
+    &-controls {
+      padding: 30px 0 0 0;
+
+      .swiper {
+
+        &-pagination {
+          display: none;
+          @include media(md) {
+            display: flex;
+            justify-content: center;
+          }
+        }
+
+        &-button {
+          $size: 50px;
+
+          &-prev,
+          &-next {
+            position: absolute;
+            background-color: $color-blue-light;
+            top: 50%;
+            margin-top: -55px;
+            width: $size;
+            height: $size;
+            @include media(md) {
+              display: none;
+            }
+          }
+          &-prev {
+            left: 0px;
+          }
+          &-next {
+            right: 0px;
+          }
+        }
+
+      }
+
+    }
+  }
+
+}

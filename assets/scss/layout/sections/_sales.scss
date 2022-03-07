@@ -1,0 +1,231 @@
+.sales {
+
+  &__list {
+
+    &-item {
+      $image-width: 260px;
+      $image-width-xl: 230px;
+      $image-width-lg: 200px;
+      $image-width-sm: 150px;
+      $image-width-xs: 100px;
+
+      background: #E8F3F8;
+      border-radius: 5px;
+      padding: 35px;
+      display: flex;
+      height: 270px;
+      @include media(xl) {
+        padding: 20px;
+        height: 220px;
+      }
+      @include media(lg) {
+        padding: 15px;
+        height: 200px;
+      }
+      @include media(md) {
+        height: auto;
+      }
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      &-text,
+      &-image {
+        display: flex;
+        align-items: center;
+      }
+
+      &-text {
+        width: calc(100% - #{$image-width});
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0 30px 0 0;
+        align-items: flex-start;
+        @include media(xl) {
+          width: calc(100% - #{$image-width-xl});
+        }
+        @include media(lg) {
+          width: calc(100% - #{$image-width-lg});
+          padding: 0 15px 0 0;
+        }
+        @include media(sm) {
+          width: calc(100% - #{$image-width-sm});
+        }
+        @include media(xs) {
+          width: calc(100% - #{$image-width-xs});
+        }
+      }
+
+      &-image {
+        width: $image-width;
+        @include media(xl) {
+          width: $image-width-xl;
+        }
+        @include media(lg) {
+          width: $image-width-lg;
+        }
+        @include media(sm) {
+          width: $image-width-sm;
+        }
+        @include media(xs) {
+          width: $image-width-xs;
+          align-items: flex-end;
+        }
+      }
+
+      &-header,
+      &-footer {
+        max-width: 290px;
+      }
+
+      &-subtitle {
+        font-size: 16px;
+        margin: 0 0 24px 0;
+        padding: 0 0 0 20px;
+        text-transform: uppercase;
+        background: url("../images/icons/lightning.svg") left 1px no-repeat;
+        @include media(xl) {
+          font-size: 13px;
+          margin: 0 0 15px 0;
+        }
+        @include media(lg) {
+          font-size: 11px;
+          margin: 0 0 10px 0;
+        }
+        @include media(sm) {
+          font-size: 12px;
+        }
+      }
+
+      &-title {
+        font-size: 20px;
+        margin: 0 0 15px 0;
+        @include media(xl) {
+          font-size: 18px;
+        }
+        @include media(lg) {
+          font-size: 16px;
+        }
+        @include media(sm) {
+          font-size: 14px;
+        }
+      }
+
+      .timer {
+        background: #fff;
+        border-radius: 2px;
+        display: inline-flex;
+        align-items: flex-end;
+        color: $color-blue;
+        padding: 8px 13px;
+        @include media(lg) {
+          padding: 6px 10px;
+        }
+
+        span{
+          font-size: 20px;
+          font-weight: 600;
+          width: 28px;
+          line-height: 1;
+          @include media(xl) {
+            font-size: 18px;
+          }
+          @include media(lg) {
+            font-size: 16px;
+            width: 22px;
+          }
+          @include media(sm) {
+            font-size: 14px;
+            width: 20px;
+          }
+        }
+
+        small {
+          font-size: 12px;
+          line-height: 1;
+          display: inline-block;
+          margin: 0 5px 0 0;
+          padding: 0 0 1px 0;
+        }
+      }
+    }
+  }
+
+  &__detail {
+
+    &-timer {
+      background: #E8F3F8;
+      border-radius: 5px;
+      padding: 25px 40px;
+      display: inline-flex;
+      flex-direction: column;
+      @include media(xl) {
+        padding: 25px;
+      }
+      @include media(md) {
+        margin: 0 0 20px 0;
+      }
+      @include media(sm) {
+        width: 100%;
+        padding: 20px 30px;
+      }
+
+      &.mobile {
+        display: none;
+        @include media(md) {
+          display: inline-flex;
+        }
+      }
+
+      &-title {
+        display: block;
+        font-size: 16px;
+        line-height: 1;
+        color: $color-blue;
+        margin: 0 0 13px 0;
+        @include media(xl) {
+          font-size: 14px;
+          margin: 0 0 10px 0;
+        }
+        @include media(sm) {
+          font-size: 16px;
+          margin: 0 0 13px 0;
+        }
+      }
+
+      .timer {
+
+        span {
+          font-weight: 600;
+          font-size: 42px;
+          color: $color-orange;
+          width: 44px;
+          display: inline-block;
+          line-height: 1;
+          margin: 0 4px 0 0;
+          @include media(xl) {
+            font-size: 32px;
+            width: 34px;
+          }
+          @include media(xs) {
+            font-size: 24px;
+            width: 26px;
+          }
+        }
+
+        small {
+          font-size: 15px;
+          margin: 0 4px 0 0;
+          display: inline-block;
+          @include media(xs) {
+            margin: 0 8px 0 0;
+          }
+        }
+      }
+
+    }
+
+  }
+
+}

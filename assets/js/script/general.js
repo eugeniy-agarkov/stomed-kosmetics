@@ -21,7 +21,6 @@ jQuery( function( $ ) {
 			this.search()
 			this.mobile_menu()
 			this.advantages()
-			this.reviews()
 			this.tab_mobile()
 			this.footer_menu()
 			this.intro_column_swiper()
@@ -168,33 +167,6 @@ jQuery( function( $ ) {
 				$this.parent().toggleClass('active')
 
 			})
-
-		},
-
-		/**
-		 * Reviews
-		 */
-		reviews: function()
-		{
-
-			/**
-			 * Slider
-			 */
-			const swiperReviews = new Swiper('.swiperReviews', {
-				loop: false,
-				speed: 300,
-				spaceBetween: 30,
-				slidesPerView: 1,
-				autoHeight: true,
-				pagination: {
-					el: '.swiperReviews .swiper-pagination',
-					type: 'fraction',
-				},
-				navigation: {
-					nextEl: '.swiperReviews .swiper-button-next',
-					prevEl: '.swiperReviews .swiper-button-prev',
-				},
-			});
 
 		},
 

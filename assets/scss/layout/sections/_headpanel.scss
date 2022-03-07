@@ -1,6 +1,10 @@
 .headpanel {
   display: flex;
+  align-items: center;
   margin: 0 0 50px 0;
+  @include media(md) {
+    margin: 0 0 30px 0;
+  }
   @include media(sm) {
     margin: 0 0 0px 0;
     flex-wrap: wrap;

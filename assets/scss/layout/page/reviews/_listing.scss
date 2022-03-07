@@ -1,0 +1,134 @@
+.reviews {
+
+  &__listing {
+    margin: 0;
+
+    > li {
+      padding: 0 0 50px 0;
+      border-bottom: 1px solid $color-blue-light;
+
+      &:not(:last-child) {
+        margin: 0 0 50px 0;
+      }
+    }
+
+    &-row {
+      $left-width: 500px;
+
+      display: flex;
+      flex-wrap: wrap;
+
+      &-left {
+        width: $left-width;
+        padding: 0 30px 0 0;
+      }
+
+      &-right {
+        width: calc(100% - #{$left-width});
+      }
+    }
+
+    &-rating {
+      border-radius: 5px;
+      display: inline-block;
+      color: #fff;
+      padding: 5px 10px 5px 30px;
+      background-position: 10px 6px;
+      background-repeat: no-repeat;
+      margin: 0 0 20px 0;
+      font-weight: 600;
+      font-size: 12px;
+
+      &.like {
+        background-image: url("../images/icons/rating-like.svg");
+        background-color: #62C370;
+      }
+
+      &.dislike {
+        background-image: url("../images/icons/rating-dislike.svg");
+        background-color: #FF3C38;
+      }
+    }
+
+    &-title {
+      font-weight: 500;
+      font-size: 26px;
+      color: #004F88;
+      margin: 0 0 20px 0;
+    }
+
+    &-date {
+      color: rgba(0, 93, 149, 0.5);
+      padding: 0 0 0 30px;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 1.1;
+      background: url("../images/icons/pencil.svg") left center no-repeat;
+      background-size: 15px;
+    }
+
+    &-excerpt {
+      font-size: 24px;
+      line-height: 1.5;
+      color: #256283;
+      max-height: 110px;
+      overflow: hidden;
+      max-width: 875px;
+
+      &.active {
+        max-height: unset;
+        overflow: unset;
+      }
+
+      &-collapse {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 1.1;
+        color: $color-blue-super;
+        display: inline-flex;
+        margin: 25px 0 0 0;
+        text-decoration: underline;
+        position: relative;
+
+        &:hover {
+          text-decoration: none;
+        }
+
+        &::after {
+          $size: 12px;
+
+          content: '';
+          width: $size;
+          height: $size;
+          display: block;
+          position: absolute;
+          right: -20px;
+          top: 50%;
+          transform: translateY(-50%);
+          background: url("../images/icons/arrow-bottom.svg") center center no-repeat;
+          background-size: contain;
+        }
+      }
+    }
+
+    &-original {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1.1;
+      color: #256283;
+      margin: 30px 0 0 0;
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      img,
+      svg {
+        margin: 0 15px 0 0;
+      }
+    }
+  }
+}

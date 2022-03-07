@@ -139,4 +139,10 @@ section {
             display: none;
         }
     }
+
+    &-md {
+      @include media(md) {
+          display: block !important;
+      }
+    }
 }

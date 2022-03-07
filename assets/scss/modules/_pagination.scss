@@ -7,6 +7,12 @@
     padding: 15px 0;
   }
 
+  &.align {
+    &-left {
+      justify-content: flex-start;
+    }
+  }
+
   &__loadmore {
     border-color: $color-blue;
     color: $color-blue;

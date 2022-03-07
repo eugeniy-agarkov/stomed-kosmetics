@@ -1,0 +1,63 @@
+.search {
+
+  &__result {
+
+    &-inner {
+      max-width: 735px;
+    }
+
+    &-list {
+      margin: 0 0 50px 0;
+      @include media(xl) {
+        margin: 0 0 30px 0;
+      }
+
+      > li {
+        &:not(:last-child) {
+          margin: 0 0 40px 0;
+        }
+      }
+
+      .badge {
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 1;
+        color: #fff;
+        display: inline-flex;
+        align-items: center;
+        margin: 0 0 15px 0;
+        border-radius: 4px;
+        padding: 5px 10px;
+
+        &.orange {
+          background-color: $color-orange;
+        }
+
+        &.green {
+          background-color: $color-green;
+        }
+
+        &.blue {
+          background-color: $color-blue-super;
+        }
+      }
+
+      &-title {
+        margin: 0 0 15px 0;
+      }
+
+      &-excerpt {
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 1.5;
+        color: $color-gray;
+        @include media(xl) {
+          font-size: 16px;
+        }
+        @include media(lg) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

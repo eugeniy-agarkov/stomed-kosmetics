@@ -46,7 +46,7 @@
     overflow: hidden;
     height: 100%;
     @include media(sm) {
-
+      justify-content: flex-end;
     }
 
     &.full {
@@ -89,10 +89,12 @@
       z-index: 1;
       right: 0;
       bottom: 0;
-      height: auto;
       @include media(sm) {
         position: relative;
         margin-left: auto;
+        width: unset;
+        left: unset;
+        height: 100%;
       }
     }
 

@@ -1,6 +1,9 @@
 @import url('../css/plugins/swiper.min.css');
 @import url('../css/plugins/nouislider.min.css');
 @import url('../css/plugins/jquery-ui.css');
+@import url('../css/plugins/jquery.fancybox.css');
+@import url('../css/plugins/intlTelInput.css');
+@import url('../css/plugins/jquery.timepicker.min.css');
 /**
  * Variables
  */
@@ -23,6 +26,8 @@
 /**
  * Modules
  */
+@import "modules/ui";
+@import "modules/fancybox";
 @import "modules/btn";
 @import "modules/form-control";
 @import "modules/swiper";
@@ -31,6 +36,8 @@
 @import "modules/breadcrumbs";
 @import "modules/text_style";
 @import "modules/collapse";
+@import "modules/intl";
+@import "modules/popup";
 
 /**
  * Layout
@@ -68,6 +75,7 @@
 @import "layout/sections/sert_last";
 @import "layout/sections/sales";
 @import "layout/sections/sales_last";
+@import "layout/sections/gallery";
 
 /**
  * Pages
@@ -76,3 +84,4 @@
 @import "layout/page/contacts/index";
 @import "layout/page/search/index";
 @import "layout/page/reviews/index";
+@import "layout/page/404/index";

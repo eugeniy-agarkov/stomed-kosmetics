@@ -174,8 +174,8 @@
       }
 
       .btn {
-        @include media(xs) {
-          max-width: 320px;
+        @include media(sm) {
+          max-width: unset;
           width: 100%;
         }
         &:not(:first-child) {

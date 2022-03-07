@@ -96,9 +96,6 @@ jQuery( function( $ ) {
 
 			})
 
-
-
-
 		},
 
 		/**
@@ -136,10 +133,6 @@ jQuery( function( $ ) {
 			});
 
 		},
-
-
-
-
 
 	}
 

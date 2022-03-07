@@ -215,7 +215,6 @@
       &-mobile {
         display: none;
         width: 100%;
-        max-width: 280px;
         height: 53px;
         background: $color-blue-indigo;
         border: 1px solid $color-blue-indigo;
@@ -224,6 +223,7 @@
         align-items: center;
         justify-content: center;
         text-transform: uppercase;
+        width: 100%;
         @include media(sm) {
           display: flex;
 

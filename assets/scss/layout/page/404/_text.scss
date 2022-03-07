@@ -1,0 +1,61 @@
+.error_page {
+
+  &__inner {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 0 0 0;
+    text-align: center;
+    @include media(md) {
+      padding: 20px 0 0 0;
+    }
+
+    img {
+      margin: 0 auto 40px auto;
+      @include media(md) {
+        margin: 0 auto 20px auto;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 1.5;
+    color: $color-gray;
+    @include media(md) {
+      font-size: 14px;
+    }
+
+    a {
+      color: $color-orange;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__footer {
+    display: none;
+    padding: 25px 0 0 0;
+
+    @include media(md) {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn {
+      width: 100%;
+      max-width: 320px;
+
+      &:not(:last-child) {
+        margin: 0 0 15px 0;
+      }
+    }
+  }
+
+
+}

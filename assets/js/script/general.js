@@ -17,6 +17,7 @@ jQuery( function( $ ) {
 		init: function ()
 		{
 
+			this.plugins()
 			this.nav()
 			this.search()
 			this.mobile_menu()
@@ -26,6 +27,22 @@ jQuery( function( $ ) {
 			this.intro_column_swiper()
 			this.collapse()
 			this.mobile_panel()
+			this.date()
+
+		},
+
+		/**
+		 * Plugins
+		 */
+		plugins: function ()
+		{
+
+			/**
+			 * Phone
+			 */
+			$('.intl-phone').intlTelInput({
+				onlyCountries: ["ru"]
+			});
 
 		},
 
@@ -274,6 +291,75 @@ jQuery( function( $ ) {
 				$('.mobilePanelFilterContent').toggleClass('active')
 
 			})
+
+
+		},
+
+		/**
+		 * Modal
+		 */
+		modal: function ()
+		{
+
+			$('[data-fancybox], [rel="data-fancybox"]').fancybox({
+				image : {
+					preload : "auto",
+					protect : true
+				},
+				buttons: [
+					"zoom",
+					'slideShow',
+					'download',
+					"thumbs",
+					"close"
+				],
+				thumbs : {
+					autoStart   : false, // Display thumbnails on opening
+					hideOnClose : true   // Hide thumbnail grid when closing animation starts
+
+				},
+				touch : {
+					vertical : 'auto'
+				},
+				ajax : {
+					settings : {
+						data : {
+							fancybox : true
+						}
+					}
+				},
+				beforeShow : function( instance, current ) {}
+			});
+
+		},
+
+		/**
+		 * Date
+		 */
+		date: function ()
+		{
+
+			/**
+			 * Date
+			 */
+			$( 'input.date' ).datepicker()
+			$( 'input.date' ).datepicker( 'option', 'dateFormat', 'dd.mm.yy' )
+			$( 'input.date' ).datepicker( 'setDate', new Date() )
+
+			/**
+			 * Time
+			 */
+			$('input.time').timepicker({
+				timeFormat: 'h:mm p',
+				interval: 60,
+				minTime: '10',
+				maxTime: '6:00pm',
+				defaultTime: '11',
+				startTime: '10:00',
+				dynamic: false,
+				dropdown: true,
+				scrollbar: true
+			});
 
 
 		},

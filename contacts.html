@@ -758,14 +758,8 @@
                         <!-- End Headpanel -->
 
                         <!-- map -->
-                        <div class="contacts__map">
+                        <div class="contacts__map" id="map">
 
-                            <img
-                                    src="assets/images/contacts-map.jpg"
-                                    alt=""
-                                    title=""
-                                    class="img-responsive"
-                            >
 
                         </div>
                         <!-- end map -->
@@ -1465,5 +1459,70 @@
 
 <script src="assets/js/src/jquery/jquery.js"></script>
 <script src="assets/js/bundle.js"></script>
+
+<!-- Yandex Map -->
+<script src="//api-maps.yandex.ru/2.1/?apikey=3cdd55d0-f348-4d92-9fd9-9d5cc0cbb95f&lang=ru-RU"></script>
+<script>
+
+    ymaps.ready(function () {
+        var myMap = new ymaps.Map('map', {
+                center: [55.76117429168956,37.59976689843748],
+                zoom: 10,
+                controls: ['zoomControl']
+            }, {
+                searchControlProvider: 'yandex#search'
+            }),
+
+            Placemark_1 = new ymaps.Placemark([55.87571306886743,37.68052649999993], {
+                hintContent: 'г. Москва, ул. Летчика Бабушкина, д. 48 Б',
+                balloonContent: 'г. Москва, ул. Летчика Бабушкина, д. 48 Б'
+            }, {
+                iconLayout: 'default#image',
+                iconImageHref: 'assets/images/yandex-pin.png',
+                iconImageSize: [40, 48],
+                iconImageOffset: [-20, -24]
+            }),
+
+            Placemark_2 = new ymaps.Placemark([55.67493006906687,37.52482149999997], {
+                hintContent: 'г. Москва, Ленинский проспект, д. 90',
+                balloonContent: 'г. Москва, Ленинский проспект, д. 90',
+            }, {
+                iconLayout: 'default#image',
+                iconImageHref: 'assets/images/yandex-pin.png',
+                iconImageSize: [40, 48],
+                iconImageOffset: [-20, -24]
+            }),
+
+            Placemark_3 = new ymaps.Placemark([55.65740806908138,37.49765649999996], {
+                hintContent: 'г. Москва, Ленинский проспект, д. 146',
+                balloonContent: 'г. Москва, Ленинский проспект, д. 146'
+            }, {
+                iconLayout: 'default#image',
+                iconImageHref: 'assets/images/yandex-pin.png',
+                iconImageSize: [40, 48],
+                iconImageOffset: [-20, -24]
+            }),
+
+            Placemark_4 = new ymaps.Placemark([55.74601006901123,37.59034449999998], {
+                hintContent: 'г. Москва, Большой Власьевский переулок, д. 9',
+                balloonContent: 'г. Москва, Большой Власьевский переулок, д. 9'
+            }, {
+                iconLayout: 'default#image',
+                iconImageHref: 'assets/images/yandex-pin.png',
+                iconImageSize: [40, 48],
+                iconImageOffset: [-40, -48]
+            });
+
+        myMap.geoObjects
+            .add(Placemark_1)
+            .add(Placemark_2)
+            .add(Placemark_3)
+            .add(Placemark_4);
+
+    });
+
+</script>
+<!-- End Yandex Map -->
+
 </body>
 </html>

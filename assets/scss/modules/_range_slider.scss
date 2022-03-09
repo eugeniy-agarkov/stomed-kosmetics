@@ -4,12 +4,16 @@
     height: 3px;
 
     .noUi-handle {
-      right: -16px;
+      right: 0px;
+
+      &-lower {
+        right: -16px;
+      }
     }
   }
 
   &-target {
-    background-color: #E3EFFF;
+    background-color: $color-blue-light;
     box-shadow: unset;
     border: none;
   }

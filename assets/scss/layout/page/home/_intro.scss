@@ -135,7 +135,7 @@
         padding: 2px 0 0 1px;
         width: $size;
         height: $size;
-        color: #4B7DC2;
+        color: $color-blue-indigo;
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -304,7 +304,7 @@
 
         &:hover {
           text-decoration: none;
-          background-color: #699CED;
+          background-color: $color-blue-indigo;
         }
 
         &.archive {
@@ -342,7 +342,7 @@
         }
 
         small {
-          background-color: #F95738;
+          background-color: $color-orange;
           border-radius: 4px;
           display: inline-block;
           width: 55px;

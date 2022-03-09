@@ -3,7 +3,7 @@
   &__faq {
 
     &-list {
-      $border-color: #E8F3F8;
+      $border-color: $color-blue-light;
 
       > li {
         border-bottom: 1px solid $border-color;
@@ -73,7 +73,7 @@
           width: $size-plus;
           height: $size-plus;
           border-radius: 50%;
-          background-color: #C2D6DF;
+          background-color: $color-blue-light;
           @include media(md) {
             width: $size-plus-md;
             height: $size-plus-md;

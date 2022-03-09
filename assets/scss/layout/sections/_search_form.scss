@@ -32,7 +32,7 @@
       border-radius: 99px;
       padding: 0 30px;
       @include placeholder {
-        color: #6784AB;
+        color: $color-blue-indigo;
       }
       @include media(lg) {
         width: calc(100% - #{$button-width-lg} - 15px);

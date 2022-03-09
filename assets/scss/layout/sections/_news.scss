@@ -84,7 +84,7 @@
           font-size: 12px;
           position: relative;
           padding: 0 0 0 11px;
-          color: #2B63E3;
+          color: $color-blue-super;
           @include media(md) {
             font-size: 10px;
           }

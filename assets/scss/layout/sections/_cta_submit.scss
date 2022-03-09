@@ -67,7 +67,8 @@
         @include placeholder {
           font-weight: 500;
           font-size: 14px;
-          color: #80A4D5;
+          color: $color-blue-light;
+          opacity: .5;
         }
 
         @include media(sm) {

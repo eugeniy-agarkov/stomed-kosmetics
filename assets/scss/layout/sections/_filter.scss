@@ -42,7 +42,7 @@
       span {
         font-size: 15px;
         margin: 0 10px 0 0;
-        color: #342E37;
+        color: $color-gray;
         @include media(md) {
           display: block;
           margin: 0 0 5px 0;
@@ -55,7 +55,7 @@
         width: 100px;
         height: 33px;
         font-size: 12px;
-        color: #898989;
+        color: $color-gray;
         padding: 0 12px;
         margin: 0 10px 0 0;
         @include media(xl) {
@@ -166,7 +166,7 @@
           position: relative;
           font-size: 14px;
           padding: 4px 0 0 35px;
-          color: #342E37;
+          color: $color-gray;
           cursor: pointer;
 
           span {

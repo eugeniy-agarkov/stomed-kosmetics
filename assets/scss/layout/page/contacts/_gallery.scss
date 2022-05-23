@@ -2,6 +2,10 @@
 
   &__gallery {
 
+      .swiper-wrapper {
+          height: auto;
+      }
+
     &-slider {
 
       &-item {

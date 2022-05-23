@@ -40,6 +40,10 @@
 
     a {
 
+        &.active {
+
+        }
+
       &.btn {
         @include media(sm) {
           width: 100%;

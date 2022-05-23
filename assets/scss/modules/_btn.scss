@@ -36,7 +36,7 @@
         font-size: 12px;
     }
 
-    &:hover {
+    &:hover, &.active {
         text-decoration: none;
         background-color: transparent;
         color: $color-blue;
@@ -53,7 +53,7 @@
         border-color: $color-blue-indigo;
         color: $color-blue-indigo;
 
-        &:hover {
+        &:hover, &.active {
             color: #fff;
             border-color: $color-blue;
             background-color: $color-blue;

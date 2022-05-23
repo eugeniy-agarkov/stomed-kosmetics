@@ -162,12 +162,13 @@
           margin: 0 0 20px 0;
         }
 
-        label {
+        label, a {
           position: relative;
           font-size: 14px;
           padding: 4px 0 0 35px;
           color: $color-gray;
           cursor: pointer;
+            display: block;
 
           span {
             text-decoration: underline;
@@ -197,7 +198,7 @@
             left: -99999px;
 
             &:checked {
-              + label {
+              + label, + a {
                 &::before {
                   background: url("../images/icons/check.svg") center center no-repeat;
                   border-color: $color-blue;

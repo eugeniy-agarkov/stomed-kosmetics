@@ -6,3 +6,29 @@
     }
   }
 }
+span {
+    &.error {
+        color: $color-red;
+        font-weight: 600;
+        font-size: 12px;
+        display: block;
+        margin-bottom: 8px;
+        position: relative;
+        margin-top: -10px;
+    }
+}
+.popup, .cta_submit {
+    span {
+        &.error {
+            margin-top: 5px;
+            margin-bottom: 0;
+        }
+    }
+}
+.cta_submit {
+    span {
+        &.error {
+            color: #fff;
+        }
+    }
+}

@@ -33,6 +33,7 @@
         flex-direction: column;
         justify-content: flex-end;
         align-items: center;
+          overflow: hidden;
         @include media(xl) {
           width: $photo-width-xl;
         }
@@ -44,6 +45,12 @@
           border-radius: 10px 10px 0px 0px;
           margin: 0 0 5px 0;
         }
+
+          img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+          }
       }
 
       &-content {

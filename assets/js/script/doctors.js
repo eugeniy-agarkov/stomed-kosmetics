@@ -104,8 +104,9 @@ jQuery( function( $ ) {
 		sertificates: function()
 		{
 
+
 			const swiperLastSert = new Swiper('.swiperLastSert .swiper', {
-				loop: true,
+				loop: false,
 				speed: 400,
 				spaceBetween: 20,
 				slidesPerView: 2,

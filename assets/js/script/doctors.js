@@ -31,10 +31,59 @@ jQuery( function( $ ) {
 			/**
 			 * Date
 			 */
-			$( '.doctorOrderDate' ).datepicker()
+			$( '.doctorOrderDate' ).datepicker({
+                onSelect: function(date, e) {
+
+                    var doctor = e.input.data('doctor'),
+                        $form = $('#slot-doctor-' + doctor),
+                        url = $form.data('slot-url'),
+                        clinic = $form.find('input[name="clinic"]').val();
+
+                    getSlots(url, clinic, date, doctor);
+
+                },
+            })
 			$( '.doctorOrderDate' ).datepicker( 'option', 'dateFormat', 'dd.mm.yy' )
 			$( '.doctorOrderDate' ).datepicker( 'setDate', new Date() )
 
+            /**
+             * Get Slots
+             * @param url
+             * @param clinic
+             * @param date
+             * @param doctor
+             */
+            function getSlots(url, clinic, date, doctor)
+            {
+
+                let $form = $('#slot-doctor-' + doctor)
+
+                $.ajax( {
+                    beforeSend  :   function(xhr){
+                        $form.addClass('loader')
+                    },
+                    data        :   {
+                        'clinic': clinic,
+                        'date'  : date,
+                    },
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    method      :   'GET',
+                    complete    :   function(){
+                        $form.removeClass('loader')
+                    },
+                    error: function(response) {
+
+                    },
+                    success     :   function( response ){
+
+                        $form.find('.ajaxSlots').html(response.html)
+
+                    },
+                    url         :   url
+                } );
+            }
 
 			/**
 			 * Locations Open
@@ -56,11 +105,21 @@ jQuery( function( $ ) {
 
 				e.preventDefault()
 
-				let $this = $(this)
+				let $this = $(this),
+                    doctor = $this.data('doctor'),
+                    $form = $('#slot-doctor-' + doctor),
+                    $clinic = $form.find('input[name="clinic"]'),
+                    url = $form.data('slot-url'),
+                    date = $form.find('.doctorOrderDate').val(),
+                    $inputLocation = $form.find('.doctorOrderLocation')
 
-				$this.parent().parent().parent().find('.doctorOrderLocation').val($this.text())
+
+                $clinic.val($this.data('clinic'));
+                $inputLocation.val($this.text())
 
 				$this.parent().parent().toggleClass('active')
+
+                getSlots(url, $clinic.val(), date, doctor);
 
 			})
 

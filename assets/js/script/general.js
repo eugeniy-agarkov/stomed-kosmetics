@@ -17,6 +17,7 @@ jQuery( function( $ ) {
 		init: function ()
 		{
 
+            this.install()
 			this.plugins()
 			this.nav()
 			this.search()
@@ -363,6 +364,30 @@ jQuery( function( $ ) {
 
 
 		},
+
+        /**
+         * Install
+         */
+        install: function ()
+        {
+
+            /**
+             * Scroll To Section
+             */
+            $(document).on('click', '.scrollSection', function(e) {
+
+                e.preventDefault();
+
+                let $this = $(this),
+                    $section = $this.data('section')
+
+                $('html, body').animate({
+                    scrollTop: $($section).offset().top - 100
+                }, 500);
+
+            })
+
+        },
 
 	}
 

@@ -113,6 +113,14 @@
       padding: 0 0 0 16px;
       background: url('../images/icons/pin.svg') left center no-repeat;
       font-size: 14px;
+
+        &.active {
+            background-image: url("../images/icons/pin-orange.svg");
+            > a {
+                color: $color-orange;
+            }
+        }
+
     }
 
     > li, a {
@@ -265,7 +273,11 @@
     }
 
     > li {
-
+        &.active {
+            > a {
+                color: $color-orange;
+            }
+        }
     }
 
   }

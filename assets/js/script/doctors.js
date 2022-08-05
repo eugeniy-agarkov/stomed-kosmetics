@@ -28,23 +28,21 @@ jQuery( function( $ ) {
 		grid_order: function ()
 		{
 
-			/**
-			 * Date
-			 */
-			$( '.doctorOrderDate' ).datepicker({
-                onSelect: function(date, e) {
+            /**
+             * Select Date
+             */
+            $(document).on('change', '.doctorOrderDate', function(e)
+            {
 
-                    var doctor = e.input.data('doctor'),
-                        $form = $('#slot-doctor-' + doctor),
-                        url = $form.data('slot-url'),
-                        clinic = $form.find('input[name="clinic"]').val();
+                let $this = $(this),
+                    doctor = $this.data('doctor'),
+                    $form = $('#slot-doctor-' + doctor),
+                    url = $form.data('slot-url'),
+                    clinic = $form.find('input[name="clinic"]').val()
 
-                    getSlots(url, clinic, date, doctor);
+                getSlots(url, clinic, $this.val(), doctor)
 
-                },
             })
-			$( '.doctorOrderDate' ).datepicker( 'option', 'dateFormat', 'dd.mm.yy' )
-			$( '.doctorOrderDate' ).datepicker( 'setDate', new Date() )
 
             /**
              * Get Slots
@@ -53,7 +51,7 @@ jQuery( function( $ ) {
              * @param date
              * @param doctor
              */
-            function getSlots(url, clinic, date, doctor)
+            function getSlots(url, clinic, date, doctor, is_clinic = false)
             {
 
                 let $form = $('#slot-doctor-' + doctor)
@@ -76,9 +74,44 @@ jQuery( function( $ ) {
                     error: function(response) {
 
                     },
-                    success     :   function( response ){
+                    success     :   function( response )
+                    {
 
-                        $form.find('.ajaxSlots').html(response.html)
+                        if( is_clinic )
+                        {
+                            console.dir(response)
+                            $form.find('.doctorOrderDateAjax').html(response.dates).promise().done(function(){
+
+                                $.ajax( {
+                                    beforeSend  :   function(xhr){
+                                        $form.addClass('loader')
+                                    },
+                                    data        :   {
+                                        'clinic': clinic,
+                                        'date'  : $form.find('.doctorOrderDate').val(),
+                                    },
+                                    headers: {
+                                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                    },
+                                    method      :   'GET',
+                                    complete    :   function(){
+                                        $form.removeClass('loader')
+                                    },
+                                    success     :   function( response )
+                                    {
+
+                                        $form.find('.ajaxSlots').html(response.html)
+
+                                    },
+                                    url         :   url
+                                } );
+
+                            });
+                        }else {
+
+                            $form.find('.ajaxSlots').html(response.html)
+
+                        }
 
                     },
                     url         :   url
@@ -119,7 +152,7 @@ jQuery( function( $ ) {
 
 				$this.parent().parent().toggleClass('active')
 
-                getSlots(url, $clinic.val(), date, doctor);
+                getSlots(url, $clinic.val(), date, doctor, true);
 
 			})
 
@@ -151,7 +184,7 @@ jQuery( function( $ ) {
 
 				$this.addClass('active')
 
-				$this.parent().parent().parent().parent().parent().find('[name="time"]').val($this.text())
+				$this.parent().parent().parent().parent().parent().parent().find('[name="time"]').val($this.text())
 
 			})
 

@@ -1,492 +1,528 @@
 .doctors {
 
-  &__grid {
-    position: relative;
-    margin: 0 0 40px 0;
-    display: flex;
-    flex-direction: column;
-    @include media(sm) {
-      margin: 0 0 30px 0;
-    }
-
-    > li {
-      &:not(:last-child) {
-        margin: 0 0 35px 0;
-      }
-    }
-
-    &-item {
-      $photo-width: 356px;
-      $photo-width-xl: 300px;
-      $photo-width-lg: 230px;
-
-      border: 1px solid $color-blue-light;
-      border-radius: 10px;
-      display: flex;
-      flex-wrap: wrap;
-
-      &-photo {
-        width: $photo-width;
-        background: $color-blue-light;
-        border-radius: 10px 0px 0px 10px;
+    &__grid {
+        position: relative;
+        margin: 0 0 40px 0;
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
-        align-items: center;
-          overflow: hidden;
-        @include media(xl) {
-          width: $photo-width-xl;
-        }
-        @include media(lg) {
-          width: $photo-width-lg;
-        }
         @include media(sm) {
-          width: 100%;
-          border-radius: 10px 10px 0px 0px;
-          margin: 0 0 5px 0;
+            margin: 0 0 30px 0;
         }
-
-          img {
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-          }
-      }
-
-      &-content {
-        width: calc(100% - #{$photo-width});
-        padding: 50px;
-        @include media(xl) {
-          padding: 20px;
-          width: calc(100% - #{$photo-width-xl});
-        }
-        @include media(lg) {
-          padding: 15px;
-          width: calc(100% - #{$photo-width-lg});
-        }
-        @include media(sm) {
-          width: 100%;
-          padding: 15px 15px 20px 15px;
-        }
-
-        &-row {
-          $right-width: 380px;
-          $right-width-xl: 340px;
-          $right-width-lg: 280px;
-
-          display: flex;
-          flex-wrap: wrap;
-
-          &-left {
-            width: calc(100% - #{$right-width});
-            @include media(xl) {
-              width: calc(100% - #{$right-width-xl});
-            }
-            @include media(lg) {
-              width: calc(100% - #{$right-width-lg});
-            }
-            @include media(sm) {
-              width: 100%;
-            }
-          }
-
-          &-right {
-            width: $right-width;
-            padding: 0 0 0 50px;
-            @include media(xl) {
-              width: $right-width-xl;
-              padding: 0 0 0 30px;
-            }
-            @include media(lg) {
-              width: $right-width-lg;
-              padding: 0 0 0 15px;
-            }
-            @include media(sm) {
-              width: 100%;
-              padding: 0;
-              display: none;
-            }
-          }
-        }
-      }
-    }
-
-    &-locations {
-      margin: 0 0 25px 0;
-      @include media(xl) {
-        margin: 0 0 15px 0;
-      }
-
-      > li {
-        min-height: 12px;
-        padding: 0 0 0 20px;
-        background: url('../images/icons/pin.svg') left 2px no-repeat;
-        font-size: 13px;
-        color: $color-blue-super;
-        line-height: 1.2;
-        @include media(sm) {
-          font-size: 12px;
-          background-position: left 1px;
-        }
-
-        &:not(:last-child) {
-          margin: 0 0 12px 0;
-          @include media(xl) {
-            margin: 0 0 6px 0;
-          }
-        }
-      }
-    }
-
-    &-title {
-      font-size: 32px;
-      margin: 0 0 15px 0;
-      @include media(xl) {
-        font-size: 26px;
-      }
-      @include media(lg) {
-        font-size: 22px;
-      }
-      @include media(sm) {
-        font-size: 14px;
-        margin: 0 0 7px 0;
-      }
-    }
-
-    &-excerpt {
-      font-weight: normal;
-      font-size: 16px;
-      line-height: 1.2;
-      color: $color-gray;
-      margin: 0 0 15px 0;
-      @include media(xl) {
-        font-size: 14px;
-      }
-      @include media(sm) {
-        font-size: 12px;
-      }
-    }
-
-    &-char {
-      font-size: 18px;
-      color: $color-gray;
-      margin: 0 0 25px 0;
-      @include media(xl) {
-        font-size: 16px;
-      }
-      @include media(lg) {
-        font-size: 14px;
-      }
-      @include media(sm) {
-        font-size: 12px;
-        margin: 0 0 15px 0;
-
-      }
-
-      > li {
-
-        span {
-          color: $color-blue-super;
-        }
-
-        &:not(:last-child) {
-          margin: 0 0 10px 0;
-          @include media(xl) {
-            margin: 0 0 5px 0;
-          }
-        }
-      }
-    }
-
-    &-archive {
-      text-decoration: underline;
-      font-size: 18px;
-      color: $color-blue-super;
-      @include media(xl) {
-        font-size: 16px;
-      }
-      @include media(lg) {
-        font-size: 14px;
-      }
-      @include media(sm) {
-        display: none;
-      }
-
-      &:hover {
-        text-decoration: none;
-      }
-    }
-
-    &-order {
-
-      &-mobile {
-        display: none;
-        width: 100%;
-        height: 53px;
-        background: $color-blue-indigo;
-        border: 1px solid $color-blue-indigo;
-        border-radius: 10px;
-        color: #fff;
-        align-items: center;
-        justify-content: center;
-        text-transform: uppercase;
-        width: 100%;
-        @include media(sm) {
-          display: flex;
-
-        }
-
-        &:hover,
-        &:active,
-        &:focus {
-          text-decoration: none;
-          background-color: $color-blue;
-          border-color: $color-blue;
-          color: #fff;
-        }
-      }
-
-      &-header {
-        display: flex;
-        margin: 0 0 25px 0;
-      }
-
-      &-date,
-      &-locations {
-        display: flex;
-        span {
-          font-size: 14px;
-          color: $color-gray;
-          display: inline-block;
-          margin: 0 5px 0 0;
-          @include media(lg) {
-            font-size: 12px;
-          }
-        }
-        [type="text"] {
-          border: none;
-          padding: 0 15px 0 0;
-          background: url("../images/icons/arrow-bottom.svg") 100% center no-repeat;
-          background-size: 10px;
-          width: 86px;
-          font-weight: 600;
-          font-size: 14px;
-          cursor: pointer;
-          margin: 0 15px 0 0;
-          color: $color-blue;
-          @include media(lg) {
-            font-size: 12px;
-            width: 78px;
-          }
-        }
-      }
-
-      &-locations {
-        position: relative;
-
-        [type="text"] {
-          //width: 100%;
-        }
-
-        &-list {
-          background: #FFF;
-          box-shadow: 0 0 4px rgb(0 0 0 / 25%);
-          border-radius: 5px;
-          margin: 0;
-          font-size: 12px;
-          position: absolute;
-          z-index: 95;
-          left: 68px;
-          display: block;
-          margin: 0;
-          top: 100%;
-          margin-top: 5px;
-          display: none;
-          @include media(xl) {
-            left: auto;
-            right: 0;
-          }
-
-          &.active {
-            display: block;
-          }
-
-          > li {
-            white-space: nowrap;
-
-            > a {
-              display: flex;
-              text-decoration: none;
-              white-space: nowrap;
-              padding: 8px 15px;
-
-              &:hover {
-                background-color: $color-blue-light;
-                text-decoration: none;
-              }
-            }
-          }
-        }
-
-      }
-
-      &-time {
-        $gutter: 5px;
-
-        position: relative;
-        display: flex;
-        flex-wrap: wrap;
-        margin-right: -#{$gutter};
-        margin-left: -#{$gutter};
 
         > li {
-          padding: 0 $gutter;
-          width: 25%;
-          display: flex;
-          margin: 0 0 10px 0;
-
-          &.hidden {
-            display: none;
-
-            &.active {
-              display: flex;
+            &:not(:last-child) {
+                margin: 0 0 35px 0;
             }
-          }
-
-          &.drop {
-            img {
-              position: relative;
-            }
-            a {
-              background-color: transparent !important;
-              &:active {
-                background-color: transparent;
-              }
-            }
-            &.active {
-              a {
-                background-color: transparent;
-              }
-
-              img {
-                transform: rotate(-180deg);
-              }
-            }
-          }
-
-          > a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #E8F3F8;
-            border-radius: 10px;
-            height: 48px;
-            font-weight: 600;
-            font-size: 18px;
-            color: $color-blue-indigo;
-            width: 100%;
-            @include media(xl) {
-              font-size: 16px;
-              height: 42px;
-            }
-            @include media(lg) {
-              font-size: 14px;
-              height: 38px;
-            }
-
-            &:hover,
-            &:active,
-            &:focus {
-              text-decoration: none;
-              background-color: #E8F3F8;
-            }
-
-            &.active {
-              border-color: $color-blue;
-              background-color: $color-blue;
-              color: #fff;
-            }
-          }
         }
 
-          &-empty {
-              padding: 0 0 30px 0;
-          }
+        &-item {
+            $photo-width: 356px;
+            $photo-width-xl: 300px;
+            $photo-width-lg: 230px;
 
-      }
+            border: 1px solid $color-blue-light;
+            border-radius: 10px;
+            display: flex;
+            flex-wrap: wrap;
 
-      &-content {
+            &-photo {
+                width: $photo-width;
+                background: $color-blue-light;
+                border-radius: 10px 0px 0px 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                align-items: center;
+                overflow: hidden;
+                max-height: 488px;
+                @include media(xl) {
+                    width: $photo-width-xl;
+                    max-height: 416px;
+                }
+                @include media(lg) {
+                    width: $photo-width-lg;
+                    max-height: 340px;
+                }
+                @include media(sm) {
+                    width: 100%;
+                    border-radius: 10px 10px 0px 0px;
+                    margin: 0 0 5px 0;
+                    max-height: unset;
+                }
 
-        &-form {
-          $inp-height: 64px;
-          $inp-height-lg: 48px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
 
-          input {
+            &-content {
+                width: calc(100% - #{$photo-width});
+                padding: 50px;
+                @include media(xl) {
+                    padding: 20px;
+                    width: calc(100% - #{$photo-width-xl});
+                }
+                @include media(lg) {
+                    padding: 15px;
+                    width: calc(100% - #{$photo-width-lg});
+                }
+                @include media(sm) {
+                    width: 100%;
+                    padding: 15px 15px 20px 15px;
+                }
 
-            &[type="text"],
-            &[type="email"],
-            &[type="tel"] {
-              height: $inp-height;
-              border: 1px solid #E8F3F8;
-              border-radius: 10px;
-              padding: 0 20px;
-              background-color: transparent;
-              font-weight: 600;
-              font-size: 18px;
-              display: block;
-              width: 100%;
-              margin: 0 0 18px 0;
-              color: $color-blue;
-              @include media(xl) {
-                font-size: 16px;
-              }
-              @include media(lg) {
+                &-row {
+                    $right-width: 380px;
+                    $right-width-xl: 340px;
+                    $right-width-lg: 280px;
+
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    &-left {
+                        width: calc(100% - #{$right-width});
+                        @include media(xl) {
+                            width: calc(100% - #{$right-width-xl});
+                        }
+                        @include media(lg) {
+                            width: calc(100% - #{$right-width-lg});
+                        }
+                        @include media(sm) {
+                            width: 100%;
+                        }
+                    }
+
+                    &-right {
+                        width: $right-width;
+                        padding: 0 0 0 50px;
+                        @include media(xl) {
+                            width: $right-width-xl;
+                            padding: 0 0 0 30px;
+                        }
+                        @include media(lg) {
+                            width: $right-width-lg;
+                            padding: 0 0 0 15px;
+                        }
+                        @include media(sm) {
+                            width: 100%;
+                            max-width: 600px;
+                            padding: 50px;
+                            border-radius: 10px;
+                            display: none;
+                        }
+                        @include media(xs) {
+                            padding: 25px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-locations {
+            margin: 0 0 25px 0;
+            @include media(xl) {
+                margin: 0 0 15px 0;
+            }
+
+            > li {
+                min-height: 12px;
+                padding: 0 0 0 20px;
+                background: url('../images/icons/pin.svg') left 2px no-repeat;
+                font-size: 13px;
+                color: $color-blue-super;
+                line-height: 1.2;
+                @include media(sm) {
+                    font-size: 12px;
+                    background-position: left 1px;
+                }
+
+                &:not(:last-child) {
+                    margin: 0 0 12px 0;
+                    @include media(xl) {
+                        margin: 0 0 6px 0;
+                    }
+                }
+            }
+        }
+
+        &-title {
+            font-size: 32px;
+            margin: 0 0 15px 0;
+            @include media(xl) {
+                font-size: 26px;
+            }
+            @include media(lg) {
+                font-size: 22px;
+            }
+            @include media(sm) {
                 font-size: 14px;
-                height: $inp-height-lg;
-                margin: 0 0 14px 0;
-              }
+                margin: 0 0 7px 0;
+            }
+        }
 
-              &:focus {
-                border-color: $color-blue;
-              }
+        &-excerpt {
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 1.2;
+            color: $color-gray;
+            margin: 0 0 15px 0;
+            @include media(xl) {
+                font-size: 14px;
+            }
+            @include media(sm) {
+                font-size: 12px;
+            }
+        }
 
-              @include placeholder {
-                color: #D3D3D3;
-              }
+        &-char {
+            font-size: 18px;
+            color: $color-gray;
+            margin: 0 0 25px 0;
+            @include media(xl) {
+                font-size: 16px;
+            }
+            @include media(lg) {
+                font-size: 14px;
+            }
+            @include media(sm) {
+                font-size: 12px;
+                margin: 0 0 15px 0;
 
             }
 
-          }
+            > li {
 
-          [type="submit"] {
-            height: $inp-height;
-            background: $color-blue-indigo;
-            border: 1px solid $color-blue-indigo;
-            border-radius: 10px;
-            text-transform: uppercase;
-            font-weight: 600;
-            font-size: 14px;
-            color: #fff;
-            padding: 0 30px;
-            cursor: pointer;
+                span {
+                    color: $color-blue-super;
+                }
+
+                &:not(:last-child) {
+                    margin: 0 0 10px 0;
+                    @include media(xl) {
+                        margin: 0 0 5px 0;
+                    }
+                }
+            }
+        }
+
+        &-archive {
+            text-decoration: underline;
+            font-size: 18px;
+            color: $color-blue-super;
+            @include media(xl) {
+                font-size: 16px;
+            }
             @include media(lg) {
-              font-size: 12px;
-              height: $inp-height-lg;
+                font-size: 14px;
+            }
+            @include media(sm) {
+                display: none;
             }
 
             &:hover {
-              background-color: $color-blue;
-              border-color: $color-blue;
-              color: #fff;
+                text-decoration: none;
             }
-          }
-
         }
 
-      }
+        &-order {
+
+            &-mobile {
+                display: none;
+                width: 100%;
+                height: 53px;
+                background: $color-blue-indigo;
+                border: 1px solid $color-blue-indigo;
+                border-radius: 10px;
+                color: #fff;
+                align-items: center;
+                justify-content: center;
+                text-transform: uppercase;
+                width: 100%;
+                @include media(sm) {
+                    display: flex;
+
+                }
+
+                &:hover,
+                &:active,
+                &:focus {
+                    text-decoration: none;
+                    background-color: $color-blue;
+                    border-color: $color-blue;
+                    color: #fff;
+                }
+            }
+
+            &-header {
+                display: flex;
+                align-items: center;
+                margin: 0 0 25px 0;
+                @include media(xs) {
+                    justify-content: flex-start;
+                    flex-wrap: wrap;
+                }
+            }
+
+            &-date,
+            &-locations {
+                display: flex;
+                align-items: center;
+                @include media(xs) {
+                    justify-content: flex-start;
+                }
+                span {
+                    font-size: 14px;
+                    color: $color-gray;
+                    display: inline-block;
+                    margin: 0 5px 0 0;
+                    @include media(lg) {
+                        font-size: 12px;
+                    }
+                }
+                [type="text"] {
+                    border: none;
+                    padding: 0 15px 0 0;
+                    background: url("../images/icons/arrow-bottom.svg") 100% center no-repeat;
+                    background-size: 10px;
+                    width: 86px;
+                    font-weight: 600;
+                    font-size: 14px;
+                    cursor: pointer;
+                    margin: 0 15px 0 0;
+                    color: $color-blue;
+                    @include media(lg) {
+                        font-size: 12px;
+                        width: 78px;
+                    }
+                }
+            }
+
+            &-date {
+                @include media(xs) {
+                    margin-bottom: 10px;
+                    width: 100%;
+                }
+                select {
+                    border: none;
+                    margin-right: 10px;
+                    font-weight: 600;
+                    font-size: 14px;
+                    cursor: pointer;
+                    color: #19385E;
+                    @include media(lg) {
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            &-locations {
+                position: relative;
+
+                [type="text"] {
+                    //width: 100%;
+                }
+
+                &-list {
+                    background: #FFF;
+                    box-shadow: 0 0 4px rgb(0 0 0 / 25%);
+                    border-radius: 5px;
+                    margin: 0;
+                    font-size: 12px;
+                    position: absolute;
+                    z-index: 95;
+                    left: 68px;
+                    display: block;
+                    margin: 0;
+                    top: 100%;
+                    margin-top: 5px;
+                    display: none;
+                    @include media(xl) {
+                        left: auto;
+                        right: 0;
+                    }
+
+                    &.active {
+                        display: block;
+                    }
+
+                    > li {
+                        white-space: nowrap;
+
+                        > a {
+                            display: flex;
+                            text-decoration: none;
+                            white-space: nowrap;
+                            padding: 8px 15px;
+
+                            &:hover {
+                                background-color: $color-blue-light;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            &-time {
+                $gutter: 5px;
+
+                position: relative;
+                display: flex;
+                flex-wrap: wrap;
+                margin-right: -#{$gutter};
+                margin-left: -#{$gutter};
+
+                > li {
+                    padding: 0 $gutter;
+                    width: 25%;
+                    display: flex;
+                    margin: 0 0 10px 0;
+
+                    &.hidden {
+                        display: none;
+
+                        &.active {
+                            display: flex;
+                        }
+                    }
+
+                    &.drop {
+                        img {
+                            position: relative;
+                        }
+                        a {
+                            background-color: transparent !important;
+                            &:active {
+                                background-color: transparent;
+                            }
+                        }
+                        &.active {
+                            a {
+                                background-color: transparent;
+                            }
+
+                            img {
+                                transform: rotate(-180deg);
+                            }
+                        }
+                    }
+
+                    > a {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 1px solid #E8F3F8;
+                        border-radius: 10px;
+                        height: 48px;
+                        font-weight: 600;
+                        font-size: 18px;
+                        color: $color-blue-indigo;
+                        width: 100%;
+                        @include media(xl) {
+                            font-size: 16px;
+                            height: 42px;
+                        }
+                        @include media(lg) {
+                            font-size: 14px;
+                            height: 38px;
+                        }
+
+                        &:hover,
+                        &:active,
+                        &:focus {
+                            text-decoration: none;
+                            background-color: #E8F3F8;
+                        }
+
+                        &.active {
+                            border-color: $color-blue;
+                            background-color: $color-blue;
+                            color: #fff;
+                        }
+                    }
+                }
+
+                &-empty {
+                    padding: 0 0 30px 0;
+                }
+
+            }
+
+            &-content {
+
+                &-form {
+                    $inp-height: 64px;
+                    $inp-height-lg: 48px;
+
+                    input {
+
+                        &[type="text"],
+                        &[type="email"],
+                        &[type="tel"] {
+                            height: $inp-height;
+                            border: 1px solid #E8F3F8;
+                            border-radius: 10px;
+                            padding: 0 20px;
+                            background-color: transparent;
+                            font-weight: 600;
+                            font-size: 18px;
+                            display: block;
+                            width: 100%;
+                            margin: 0 0 18px 0;
+                            color: $color-blue;
+                            @include media(xl) {
+                                font-size: 16px;
+                            }
+                            @include media(lg) {
+                                font-size: 14px;
+                                height: $inp-height-lg;
+                                margin: 0 0 14px 0;
+                            }
+
+                            &:focus {
+                                border-color: $color-blue;
+                            }
+
+                            @include placeholder {
+                                color: #D3D3D3;
+                            }
+
+                        }
+
+                    }
+
+                    [type="submit"] {
+                        height: $inp-height;
+                        background: $color-blue-indigo;
+                        border: 1px solid $color-blue-indigo;
+                        border-radius: 10px;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        font-size: 14px;
+                        color: #fff;
+                        padding: 0 30px;
+                        cursor: pointer;
+                        @include media(lg) {
+                            font-size: 12px;
+                            height: $inp-height-lg;
+                        }
+
+                        &:hover {
+                            background-color: $color-blue;
+                            border-color: $color-blue;
+                            color: #fff;
+                        }
+                    }
+
+                }
+
+            }
+        }
+
+
     }
-
-
-  }
 
 }

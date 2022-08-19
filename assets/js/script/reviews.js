@@ -65,7 +65,7 @@ jQuery( function( $ ) {
 				e.preventDefault()
 
 				let $this = $(this),
-					$container = $this.parent().find('.reviewsCollapse'),
+					$container = $this.parent().parent().find('.reviewsCollapse'),
 					text_collapse = $this.data('text-collapse'),
 					text_collapsed = $this.data('text-collapsed')
 
